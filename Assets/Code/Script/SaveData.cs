@@ -5,7 +5,13 @@ public class SaveData {
 
     public bool musicEnabled;
     public bool sfxEnabled;
-    public Language language;
+    public Language language = Language.english;
+
+    public uint arcadeHighScore;
+
+    public bool[][] levelCompletion;
+    public double[][] firstClearTime; // For data collection
+    public double[][] fastestClearTime;
 
 }
 
