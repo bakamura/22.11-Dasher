@@ -18,7 +18,7 @@ public class DashResetter : MonoBehaviour {
 
     private void Start() {
         _respawnWait = new WaitForSeconds(_respawnDelay);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
+        FindObjectOfType<LevelManager>().onLevelStart.AddListener(ForceRespawn);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -38,7 +38,7 @@ public class DashResetter : MonoBehaviour {
         // Animation
     }
 
-    private void Restart() {
+    private void ForceRespawn() {
         StopAllCoroutines();
         _col.enabled = true;
         // Active Animation

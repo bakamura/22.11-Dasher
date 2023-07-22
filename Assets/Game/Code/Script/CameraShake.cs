@@ -22,7 +22,7 @@ public class CameraShake : Singleton<CameraShake> {
 
     private void Start() {
         FindObjectOfType<PlayerDash>().onDash.AddListener(ShakeCamera);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
+        FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShakeStop);
     }
 
     private void ShakeCamera(Vector2 direction) {
@@ -46,7 +46,7 @@ public class CameraShake : Singleton<CameraShake> {
         transform.position = _anchorPosition;
     }
 
-    private void Restart() {
+    private void ShakeStop() {
         StopAllCoroutines();
         transform.position = _anchorPosition; // Reset Anchor pos if level has moving camera
     }

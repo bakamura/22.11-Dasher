@@ -32,7 +32,6 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
         TimeSpan span = TimeSpan.FromSeconds(Time.timeSinceLevelLoad - _timeAtStart);
         _timeTakenText.text = _textBeforeTime + span.ToString(@"m\:ss\.fff"); // Check what happens if more than 10mins
 
-        _successDisplayRectTransform.gameObject.SetActive(true);
         _successDisplayRectTransform.anchoredPosition = _successDisplayInitialPos;
 
         float animation = 0;
@@ -60,7 +59,6 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
 
     private void Restart() {
         PlayerDash.instance.onDash.AddListener(StartTimer);
-        _successDisplayRectTransform.gameObject.SetActive(false);
     }
 
 }

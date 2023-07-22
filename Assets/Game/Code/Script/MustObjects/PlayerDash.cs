@@ -35,7 +35,7 @@ public class PlayerDash : Singleton<PlayerDash> {
     }
 
     private void Start() {
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
+        FindObjectOfType<LevelManager>().onLevelStart.AddListener(GoToInitialPos);
     }
 
     private void Update() {
@@ -76,7 +76,7 @@ public class PlayerDash : Singleton<PlayerDash> {
         _dashAvailable = true;
     }
 
-    private void Restart() {
+    private void GoToInitialPos() {
         transform.position = initialPos;
         _rb.velocity = Vector2.zero;
     }

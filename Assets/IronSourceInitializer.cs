@@ -14,6 +14,8 @@ public class IronSourceInitializer : Singleton<IronSourceInitializer> {
     private void Start() {
         IronSource.Agent.init(APP_KEY);
         IronSource.Agent.shouldTrackNetworkState(true);
+
+        InterstitialLoad();
     }
 
     // Why OnEnable ? check later

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SimulatedThumbStick : MonoBehaviour {
@@ -50,7 +51,7 @@ public class SimulatedThumbStick : MonoBehaviour {
             _touch = Input.GetTouch(0);
             _touchDirection = _touch.position - _thumbStickContainerPos;
             if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) {
-                if (_touch.phase == TouchPhase.Ended) { // Check if works
+                if (_touch.phase == TouchPhase.Ended) {
                     PlayerDash.instance.Dash(_touchDirection);
                     _thumbStickRectTransform.anchoredPosition = Vector2.zero;
                 }
@@ -70,6 +71,13 @@ public class SimulatedThumbStick : MonoBehaviour {
     }
 
     private void ShowInput() {
+        // Putting in a Routine to prevent Input on the same event as closing a Menu
+        StartCoroutine(ShowInputRoutine());
+    }
+
+    private IEnumerator ShowInputRoutine() {
+        yield return null;
+
         ToggleInput(true);
     }
 

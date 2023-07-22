@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour {
 
     [Header("Parameters")]
 
-    [HideInInspector] public UnityEvent onLevelEnter = new UnityEvent();
+    [HideInInspector] public UnityEvent onLevelEnter = new UnityEvent(); // Needed only if PlayerInitialPos setter will use it
     [HideInInspector] public UnityEvent onLevelStart = new UnityEvent();
 
     [Header("Cache")]
@@ -49,8 +49,16 @@ public class LevelManager : MonoBehaviour {
 
         // Animation
 
+        // After animation ended only
+
         // Start loading Ad to avoid delaying user experience at level end
         IronSourceInitializer.instance.InterstitialLoad();
+
+        // Unpause game if needed (maybe call somehow HUD.onPause(false))
+        Time.timeScale = 1;
+
+        onLevelEnter?.Invoke();
+        onLevelStart?.Invoke();
     }
 
     public void RestartScene() {
