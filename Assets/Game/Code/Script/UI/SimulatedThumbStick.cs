@@ -22,6 +22,7 @@ public class SimulatedThumbStick : MonoBehaviour {
     }
 
     private void Start() {
+        FindObjectOfType<HUD>().onPause.AddListener(ToggleInput);
         Goal.onGoal.AddListener(HideInput);
         FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShowInput);
     }
@@ -63,14 +64,17 @@ public class SimulatedThumbStick : MonoBehaviour {
         return min <= value && value <= max;
     }
 
+    private void ToggleInput(bool isTrue) {
+        _thumbStickContainerRectTransform.SetActive(isTrue);
+        _thumbStickRectTransform.gameObject.SetActive(isTrue);
+    }
+
     private void ShowInput() {
-        _thumbStickContainerRectTransform.SetActive(true);
-        _thumbStickRectTransform.gameObject.SetActive(true);
+        ToggleInput(true);
     }
 
     private void HideInput() {
-        _thumbStickContainerRectTransform.SetActive(false);
-        _thumbStickRectTransform.gameObject.SetActive(false);
+        ToggleInput(false);
     }
 
 }

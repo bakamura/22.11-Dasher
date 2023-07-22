@@ -1,13 +1,32 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "FAGATGNJYXLVQC79",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "FAGATGNJYXLVQC79",
+        "name": "com.ZetaZash.com.unity.Dasher",
+        "processId": 29997,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "FAGATGNJYXLVQC79",
+            "name": "com.android.settings",
+            "processId": 13311,
+            "exited": false
+        },
+        {
+            "deviceId": "FAGATGNJYXLVQC79",
+            "name": "com.ZetaZash.com.unity.Dasher",
+            "processId": 25621,
+            "exited": false
+        },
+        {
+            "deviceId": "FAGATGNJYXLVQC79",
+            "name": "com.ZetaZash.com.unity.Dasher",
+            "processId": 29997,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +60,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },
