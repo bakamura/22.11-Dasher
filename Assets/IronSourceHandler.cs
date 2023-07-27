@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class IronSourceInitializer : Singleton<IronSourceInitializer> {
+public class IronSourceHandler : Singleton<IronSourceHandler> {
 
 #if UNITY_ANDROID
     private readonly static string APP_KEY = "1ae7669a5";
-    private readonly static string INTERSTITIAL_PLACEMENT = "Interstitial_Android";
+    private readonly static string INTERSTITIAL_PLACEMENT = "DefaultInterstitial";
 #elif UNITY_IOS
     private static string APP_KEY = "";
     private readonly static string INTERSTITIAL_PLACEMENT = "Interstitial_iOS";
@@ -14,7 +14,7 @@ public class IronSourceInitializer : Singleton<IronSourceInitializer> {
     private void Start() {
         IronSource.Agent.init(APP_KEY);
         IronSource.Agent.shouldTrackNetworkState(true);
-
+        // IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
         InterstitialLoad();
     }
 
@@ -214,11 +214,12 @@ public class IronSourceInitializer : Singleton<IronSourceInitializer> {
     }
 
     public void InterstitialShow() {
-        if (IronSource.Agent.isInterstitialReady() && IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT)) {
+        if (IronSource.Agent.isInterstitialReady() /*&& IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT)*/) {
             IronSource.Agent.showInterstitial(INTERSTITIAL_PLACEMENT);
         }
         else {
-            // Log stuff
+            Debug.Log("Interstitial Ready: " + IronSource.Agent.isInterstitialReady() +
+                      "\n Interstitial Placement Capped:" + IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT));
         }
     }
 

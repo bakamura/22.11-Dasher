@@ -16,8 +16,10 @@ public class LevelManager : MonoBehaviour {
     private bool _waitForAd = false;
 
     private void Start() {
-        IronSourceInitializer.instance.SubscribeToIronSourceEvent(IronSourceInitializer.IronSourceEvent.InterstitialAdShowSucceededEvent, AdOpened);
-        IronSourceInitializer.instance.SubscribeToIronSourceEvent(IronSourceInitializer.IronSourceEvent.InterstitialAdClosedEvent, AdClosed);
+        //IronSourceInitializer.instance.SubscribeToIronSourceEvent(IronSourceInitializer.IronSourceEvent.InterstitialAdShowSucceededEvent, AdOpened);
+        IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdShowFailedEvent , AdFail);
+        IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdClosedEvent, AdClosed);
+        IronSourceHandler.instance.InterstitialLoad();
 
         SceneManager.LoadScene(SaveSystem.instance.progress.levelCurrent, LoadSceneMode.Additive);
     }
@@ -29,10 +31,13 @@ public class LevelManager : MonoBehaviour {
     private IEnumerator GoToSceneRoutine(int sceneId) {
         if (sceneId == 0) sceneId = _currentSceneId + 1;
 
+        // Pause Game
+
         // Animation
 
         // After animation ended only
-        IronSourceInitializer.instance.InterstitialShow();
+        IronSourceHandler.instance.InterstitialShow(); 
+        _waitForAd = true;
 
         AsyncOperation loadOperation = SceneManager.UnloadSceneAsync(_currentSceneId);
 
@@ -52,9 +57,9 @@ public class LevelManager : MonoBehaviour {
         // After animation ended only
 
         // Start loading Ad to avoid delaying user experience at level end
-        IronSourceInitializer.instance.InterstitialLoad();
+        IronSourceHandler.instance.InterstitialLoad();
 
-        // Unpause game if needed (maybe call somehow HUD.onPause(false))
+        // Unpause game
         Time.timeScale = 1;
 
         onLevelEnter?.Invoke();
@@ -71,6 +76,9 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void AdClosed(IronSourceAdInfo adInfo) {
+        _waitForAd = false;
+    }
+    private void AdFail(IronSourceError adError , IronSourceAdInfo adInfo) {
         _waitForAd = false;
     }
 }
