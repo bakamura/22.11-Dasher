@@ -1,29 +1,47 @@
 {
     "m_SelectedDeviceId": "FAGATGNJYXLVQC79",
     "m_SelectedPackage": {
-        "deviceId": "FAGATGNJYXLVQC79",
-        "name": "com.ZetaZash.com.unity.Dasher",
-        "processId": 29997,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "FAGATGNJYXLVQC79",
+            "name": "com.miui.home",
+            "processId": 23373,
+            "exited": false
+        },
+        {
+            "deviceId": "FAGATGNJYXLVQC79",
             "name": "com.android.settings",
-            "processId": 13311,
-            "exited": false
+            "processId": 19792,
+            "exited": true
         },
         {
             "deviceId": "FAGATGNJYXLVQC79",
             "name": "com.ZetaZash.com.unity.Dasher",
-            "processId": 25621,
-            "exited": false
+            "processId": 17620,
+            "exited": true
         },
         {
             "deviceId": "FAGATGNJYXLVQC79",
             "name": "com.ZetaZash.com.unity.Dasher",
-            "processId": 29997,
+            "processId": 21304,
+            "exited": true
+        },
+        {
+            "deviceId": "FAGATGNJYXLVQC79",
+            "name": "com.ZetaZash.com.unity.Dasher",
+            "processId": 23187,
+            "exited": true
+        },
+        {
+            "deviceId": "FAGATGNJYXLVQC79",
+            "name": "com.ZetaZash.com.unity.Dasher",
+            "processId": 3182,
             "exited": false
         }
     ],

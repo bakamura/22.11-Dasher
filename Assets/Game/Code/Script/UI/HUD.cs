@@ -17,9 +17,9 @@ public class HUD : Menu {
         FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShowPauseBtn);
     }
 
-    public void PauseBtn(bool isPausing) {
-        Time.timeScale = isPausing ? 1f : 0f;
-        onPause?.Invoke(isPausing);
+    public void PauseBtn(bool notPausing) {
+        Time.timeScale = notPausing ? 1f : 0f;
+        onPause?.Invoke(notPausing);
     }
 
     public void ShowPauseBtn() {

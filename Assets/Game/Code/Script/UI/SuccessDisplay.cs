@@ -19,7 +19,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     private float _timeAtStart;
 
     private void Start() {
-        PlayerDash.instance.onDash.AddListener(StartTimer); // Re-Add every load
+        PlayerDash.instance.onDash.AddListener(StartTimer);
         Goal.onGoal.AddListener(ShowDisplay);
         FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class IronSourceHandler : Singleton<IronSourceHandler> {
@@ -11,11 +12,19 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
     private readonly static string INTERSTITIAL_PLACEMENT = "Interstitial_iOS";
 #endif
 
+    private WaitForSeconds _interstitialLoadCheckWait;
+
+    protected override void Awake() {
+        base.Awake();
+
+        _interstitialLoadCheckWait = new WaitForSeconds(30f);
+    }
+
     private void Start() {
         IronSource.Agent.init(APP_KEY);
         IronSource.Agent.shouldTrackNetworkState(true);
         // IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
-        InterstitialLoad();
+        StartCoroutine(InterstitialLoad());
     }
 
     // Why OnEnable ? check later
@@ -204,18 +213,18 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
         else IronSource.Agent.hideBanner();
     }
 
-    public bool InterstitialLoad() {
-        if (!IronSource.Agent.isInterstitialReady()) {
+    private IEnumerator InterstitialLoad() {
+        while (!IronSource.Agent.isInterstitialReady()) {
             IronSource.Agent.loadInterstitial();
-            return true;
+
+            yield return _interstitialLoadCheckWait;
         }
-        Debug.LogWarning("Avoided loading aditional Interstitial Ad");
-        return false;
     }
 
     public void InterstitialShow() {
-        if (IronSource.Agent.isInterstitialReady() /*&& IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT)*/) {
+        if (IronSource.Agent.isInterstitialReady() && !IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT)) {
             IronSource.Agent.showInterstitial(INTERSTITIAL_PLACEMENT);
+            StartCoroutine(InterstitialLoad());
         }
         else {
             Debug.Log("Interstitial Ready: " + IronSource.Agent.isInterstitialReady() +

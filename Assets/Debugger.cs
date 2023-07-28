@@ -15,9 +15,9 @@ public class Debugger : MonoBehaviour {
         _debugUiText.text = "";
     }
 
-    public void LoadInterstitialAd() {
-        IronSourceHandler.instance.InterstitialLoad();
-    }
+    //public void LoadInterstitialAd() {
+    //    IronSourceHandler.instance.InterstitialLoad();
+    //}
 
     public void ShowInterstitialAd() {
         IronSourceHandler.instance.InterstitialShow();
