@@ -15,14 +15,14 @@ public class LevelManager : Singleton<LevelManager> {
     private bool _waitForAd = false;
     private HUD _hud;
     private LevelTransitionAnimation _transitionAnimationHandler;
-    private WaitForSeconds _transitionStartWait;
-    private WaitForSeconds _transitionEndWait;
+    private WaitForSecondsRealtime _transitionStartWait;
+    private WaitForSecondsRealtime _transitionEndWait;
 
     private void Start() {
         _hud = FindObjectOfType<HUD>();
         _transitionAnimationHandler = FindObjectOfType<LevelTransitionAnimation>();
-        _transitionStartWait = new WaitForSeconds(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_START));
-        _transitionEndWait = new WaitForSeconds(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_END));
+        _transitionStartWait = new WaitForSecondsRealtime(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_START));
+        _transitionEndWait = new WaitForSecondsRealtime(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_END));
 
         IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdShowSucceededEvent, AdOpened);
         IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdClosedEvent, AdClosed);
