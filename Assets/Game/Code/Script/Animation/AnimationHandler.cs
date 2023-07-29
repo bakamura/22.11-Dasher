@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class AnimationHandler : MonoBehaviour {
 
@@ -14,12 +15,19 @@ public abstract class AnimationHandler : MonoBehaviour {
 
     [Header("Cache")]
 
+    private bool _useSr = true;
     protected SpriteRenderer _sr;
+    protected Image _img;
     public SpriteRenderer SpriteRenderer { get { return _sr; } }
     private Coroutine _currentCoroutine;
 
     protected virtual void Awake() {
         _sr = GetComponent<SpriteRenderer>();
+        if (_sr == null) {
+            _img = GetComponent<Image>();
+            _useSr = false;
+        }
+
         _animationWait = new WaitForSeconds[_animation.Length];
         for (int i = 0; i < _animation.Length; i++) {
             _animationDict.Add(_animation[i].name, i);
@@ -35,7 +43,14 @@ public abstract class AnimationHandler : MonoBehaviour {
             if (_animation[_currentAnimation].loop) _currentFrame = 0;
             else return;
         }
-        _sr.sprite = _animation[_currentAnimation].sprites[_currentFrame];
+        if (_useSr) {
+            _sr.enabled = _animation[_currentAnimation].sprites[_currentFrame] != null;
+            _sr.sprite = _animation[_currentAnimation].sprites[_currentFrame];
+        }
+        else {
+            _img.sprite = _animation[_currentAnimation].sprites[_currentFrame];
+            _img.enabled = _animation[_currentAnimation].sprites[_currentFrame] != null;
+            }
     }
 
     protected void ChangeAnimation(string animationName) {
@@ -66,6 +81,7 @@ public abstract class AnimationHandler : MonoBehaviour {
         }
     }
 
+    // Used to avoid checking if Coroutine is null every frame
     private IEnumerator EmptyRoutine() {
         yield return null;
     }

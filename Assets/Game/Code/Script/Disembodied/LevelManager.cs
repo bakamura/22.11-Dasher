@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : Singleton<LevelManager> {
 
     [Header("Parameters")]
 
@@ -12,12 +12,17 @@ public class LevelManager : MonoBehaviour {
 
     [Header("Cache")]
 
-    private static int _currentSceneId = 1;
     private bool _waitForAd = false;
     private HUD _hud;
+    private LevelTransitionAnimation _transitionAnimationHandler;
+    private WaitForSeconds _transitionStartWait;
+    private WaitForSeconds _transitionEndWait;
 
     private void Start() {
         _hud = FindObjectOfType<HUD>();
+        _transitionAnimationHandler = FindObjectOfType<LevelTransitionAnimation>();
+        _transitionStartWait = new WaitForSeconds(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_START));
+        _transitionEndWait = new WaitForSeconds(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_END));
 
         IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdShowSucceededEvent, AdOpened);
         IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdClosedEvent, AdClosed);
@@ -30,22 +35,22 @@ public class LevelManager : MonoBehaviour {
     }
 
     private IEnumerator GoToSceneRoutine(int sceneId) {
-        if (sceneId == 0) sceneId = _currentSceneId + 1;
+        if (sceneId == 0) sceneId = SaveSystem.instance.progress.levelCurrent + 1;
 
         _hud.PauseBtn(false);
-        
-        // Animation
 
-        // After animation ended only
+        _transitionAnimationHandler.TransitionStartAnimation();
+
+        yield return _transitionStartWait;
 
         IronSourceHandler.instance.InterstitialShow();
 
-        AsyncOperation loadOperation = SceneManager.UnloadSceneAsync(_currentSceneId);
+        AsyncOperation loadOperation = SceneManager.UnloadSceneAsync(SaveSystem.instance.progress.levelCurrent);
 
         yield return loadOperation;
 
-        _currentSceneId = sceneId;
-        loadOperation = SceneManager.LoadSceneAsync(_currentSceneId, LoadSceneMode.Additive);
+        SaveSystem.instance.progress.levelCurrent = sceneId;
+        loadOperation = SceneManager.LoadSceneAsync(SaveSystem.instance.progress.levelCurrent, LoadSceneMode.Additive);
 
         yield return loadOperation;
 
@@ -53,19 +58,19 @@ public class LevelManager : MonoBehaviour {
             yield return null;
         }
 
-        // Animation
+        _transitionAnimationHandler.TransitionEndAnimation();
 
-        // After animation ended only
+        yield return _transitionEndWait;
 
-        _hud.PauseBtn(true);
 
         onLevelEnter?.Invoke();
-        onLevelStart?.Invoke();
+        RestartBtn();
     }
 
-    public void RestartScene() {
+    public void RestartBtn() {
+        _hud.PauseBtn(true);
         onLevelStart.Invoke();
-        // Show Ad here ?
+        // Show Ad here ? Probably not, frustration on retry-players builds faster and lead to disengagement
     }
 
     private void AdOpened(IronSourceAdInfo adInfo) {

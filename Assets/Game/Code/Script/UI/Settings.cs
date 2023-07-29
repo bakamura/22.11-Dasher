@@ -29,7 +29,7 @@ public class Settings : MonoBehaviour {
         _mixer.GetFloat("VolMusic", out float f);
         _mixer.SetFloat("VolMusic", f == -80f ? 0f : -80f);
 
-        SaveSystem.instance.settings.musicOn = f == -80f;
+        SaveSystem.instance.ToggleAudio(SaveSystem.AudioType.Music, f == -80f);
     }
 
     public void ToggleSfx() {
@@ -38,7 +38,7 @@ public class Settings : MonoBehaviour {
         _mixer.GetFloat("VolSfx", out float f);
         _mixer.SetFloat("VolSfx", f == -80f ? 0 : -80f);
 
-        SaveSystem.instance.settings.musicOn = f == -80f;
+        SaveSystem.instance.ToggleAudio(SaveSystem.AudioType.Sfx, f == -80f);
     }
 
 }

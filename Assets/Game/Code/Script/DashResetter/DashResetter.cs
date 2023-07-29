@@ -9,10 +9,12 @@ public class DashResetter : MonoBehaviour {
 
     [Header("Cache")]
 
+    private DashResetterAnimation _animationHandler;
     private WaitForSeconds _respawnWait;
     private Collider2D _col;
 
     private void Awake() {
+        _animationHandler = GetComponent<DashResetterAnimation>();
         _col = GetComponent<Collider2D>();
     }
 
@@ -30,18 +32,18 @@ public class DashResetter : MonoBehaviour {
 
     private IEnumerator Respawn() {
         _col.enabled = false;
-        // Animation 
-        
+        _animationHandler.BreakAnimation();
+
         yield return _respawnWait;
 
         _col.enabled = true;
-        // Animation
+        _animationHandler.SpawnAnimation();
     }
 
     private void ForceRespawn() {
         StopAllCoroutines();
         _col.enabled = true;
-        // Active Animation
+        _animationHandler.SpawnAnimation();
     }
 
 }

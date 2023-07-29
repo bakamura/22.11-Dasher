@@ -18,10 +18,16 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     [SerializeField] private string _textBeforeTime;
     private float _timeAtStart;
 
+    [Header("Cache")]
+
+    private HUD _hud;
+
     private void Start() {
         PlayerDash.instance.onDash.AddListener(StartTimer);
         Goal.onGoal.AddListener(ShowDisplay);
         FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
+
+        _hud = FindObjectOfType<HUD>();
     }
 
     private void ShowDisplay() {
@@ -31,6 +37,8 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     private IEnumerator ShowDisplayRoutine() {
         TimeSpan span = TimeSpan.FromSeconds(Time.timeSinceLevelLoad - _timeAtStart);
         _timeTakenText.text = _textBeforeTime + span.ToString(@"m\:ss\.fff"); // Check what happens if more than 10mins
+        SaveSystem.instance.CompleteLevel(span);
+        _hud.LevelEnterBtnUpdate();
 
         _successDisplayRectTransform.anchoredPosition = _successDisplayInitialPos;
 

@@ -9,6 +9,7 @@ public class PlayerDash : Singleton<PlayerDash> {
     [SerializeField] private float _dashVelocity;
     private bool _dashAvailable;
     [HideInInspector] public UnityEvent<Vector2> onDash = new UnityEvent<Vector2>();
+    [HideInInspector] public UnityEvent onDashReady = new UnityEvent();
 
     [Header("Check Ground")]
 
@@ -73,6 +74,7 @@ public class PlayerDash : Singleton<PlayerDash> {
     }
 
     public void ResetDash() {
+        if (!_dashAvailable) onDashReady?.Invoke();
         _dashAvailable = true;
     }
 

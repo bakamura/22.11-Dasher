@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerIdle
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -1267978756848891197, guid: 88e46adc132c28042a1268e67d9d74e3, type: 3}
+  - {fileID: 2791381026813644536, guid: 5c1e0e1e1d2396e4385897eb37740d0f, type: 3}
   speed: 1
   loop: 1

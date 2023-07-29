@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db328496e5c21924d8ae8cd79654d7a9, type: 3}
-  m_Name: DashResetterSpawn
+  m_Name: ResetterSpawn
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 1
-  loop: 1
+  - {fileID: -3183746886612138985, guid: 5c1e0e1e1d2396e4385897eb37740d0f, type: 3}
+  - {fileID: -6061539712032050239, guid: 5c1e0e1e1d2396e4385897eb37740d0f, type: 3}
+  - {fileID: -6061539712032050239, guid: 5c1e0e1e1d2396e4385897eb37740d0f, type: 3}
+  speed: 6
+  loop: 0

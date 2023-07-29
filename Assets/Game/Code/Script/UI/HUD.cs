@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class HUD : Menu {
 
@@ -12,9 +13,14 @@ public class HUD : Menu {
 
     [HideInInspector] public UnityEvent<bool> onPause = new UnityEvent<bool>();
 
+    [Header("Level Selector")]
+
+    [SerializeField] private Button[] _levelSelectBtn;
+
     private void Start() {
         Goal.onGoal.AddListener(HidePauseBtn);
         FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShowPauseBtn);
+        LevelEnterBtnUpdate();
     }
 
     public void PauseBtn(bool notPausing) {
@@ -30,4 +36,7 @@ public class HUD : Menu {
         OpenMenu(_successDisplay);
     }
 
+    public void LevelEnterBtnUpdate() {
+        for (int i = 1; i < SaveSystem.instance.progress.levelCleared.Length; i++) _levelSelectBtn[i].interactable = SaveSystem.instance.progress.levelCleared[i];
+    }
 }

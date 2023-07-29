@@ -18,19 +18,19 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
         base.Awake();
 
         _interstitialLoadCheckWait = new WaitForSeconds(30f);
+
+        IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
     }
 
     private void Start() {
         IronSource.Agent.init(APP_KEY);
         IronSource.Agent.shouldTrackNetworkState(true);
-        // IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
         StartCoroutine(InterstitialLoad());
     }
 
-    // Why OnEnable ? check later
-    private void OnEnable() {
-        IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
-    }
+    //private void OnEnable() {
+    //    IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
+    //}
 
     private void OnApplicationPause(bool isPaused) {
         IronSource.Agent.onApplicationPause(isPaused);
@@ -203,11 +203,13 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
     #endregion
 
 
+    // UNUSED
     public void BannerLoad(bool isLoading) {
         if (isLoading) IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.TOP);
         else IronSource.Agent.destroyBanner();
     }
 
+    // UNUSED
     public void BannerShow(bool isShowing) {
         if (isShowing) IronSource.Agent.displayBanner();
         else IronSource.Agent.hideBanner();
@@ -232,12 +234,13 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
         }
     }
 
+    // UNUSED
+    // Logic should probably use IronSource Events instead of returning bool through method
     public bool RewardadeShow() {
         if (IronSource.Agent.isRewardedVideoAvailable()) {
             IronSource.Agent.showRewardedVideo();
             return true;
         }
-        // Log Stuff
         return false;
     }
 
