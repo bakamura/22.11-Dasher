@@ -73,18 +73,22 @@ public class SaveSystem : Singleton<SaveSystem> {
     public void SaveErase() {
         if (File.Exists(progressPath)) File.Delete(progressPath);
         progress = new SaveProgress(SceneManager.sceneCountInBuildSettings - 1);
+        
         SaveUpdate(SaveType.Progress);
     }
 
     public void CompleteLevel(TimeSpan time) {
         progress.levelCleared[progress.levelCurrent - 1] = true;
         progress.levelClearTime[progress.levelCurrent - 1] = time;
+        
         SaveUpdate(SaveType.Progress);
     }
 
     public void ToggleAudio(AudioType type, bool isActive) {
         if (type == AudioType.Music) settings.musicOn = isActive;
         else settings.sfxOn = isActive;
+
+        SaveUpdate(SaveType.Settings);
     }
 
 }

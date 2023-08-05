@@ -32,6 +32,7 @@ public class IronSourceDemoScript : MonoBehaviour {
 
     }
 
+    [Obsolete]
     void OnEnable() {
 
         //Add Init Event

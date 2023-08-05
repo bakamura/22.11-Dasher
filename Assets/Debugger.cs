@@ -8,23 +8,28 @@ public class Debugger : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _debugUiText;
 
     private void Start() {
-        IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdReadyEvent, AdLoadEvent);
-        IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdLoadFailedEvent, AdLoadFailEvent);
-        IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdOpenedEvent, AdShowEvent);
-        IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdShowFailedEvent, AdShowFailEvent);
-        _debugUiText.text = "";
+        Debug.Log("MusicOn is: " + SaveSystem.instance.settings.musicOn);
+        Debug.Log("SfxOn is: " + SaveSystem.instance.settings.sfxOn);
     }
 
-    //public void LoadInterstitialAd() {
-    //    IronSourceHandler.instance.InterstitialLoad();
+    //private void Start() {
+    //    IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdReadyEvent, AdLoadEvent);
+    //    IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdLoadFailedEvent, AdLoadFailEvent);
+    //    IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdOpenedEvent, AdShowEvent);
+    //    IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdShowFailedEvent, AdShowFailEvent);
+    //    _debugUiText.text = "";
     //}
 
-    public void ShowInterstitialAd() {
-        IronSourceHandler.instance.InterstitialShow();
-    }
+    ////public void LoadInterstitialAd() {
+    ////    IronSourceHandler.instance.InterstitialLoad();
+    ////}
 
-    private void AdLoadEvent(IronSourceAdInfo adInfo) { _debugUiText.text = "Ad Load Event"; }
-    private void AdLoadFailEvent(IronSourceError adError) { _debugUiText.text = "Ad Load Fail Event"; }
-    private void AdShowEvent(IronSourceAdInfo adInfo) { _debugUiText.text = "Ad Show Event"; }
-    private void AdShowFailEvent(IronSourceError adError, IronSourceAdInfo adInfo) { _debugUiText.text = "Ad Show Fail Event"; }
+    //public void ShowInterstitialAd() {
+    //    IronSourceHandler.instance.InterstitialShow();
+    //}
+
+    //private void AdLoadEvent(IronSourceAdInfo adInfo) { _debugUiText.text = "Ad Load Event"; }
+    //private void AdLoadFailEvent(IronSourceError adError) { _debugUiText.text = "Ad Load Fail Event"; }
+    //private void AdShowEvent(IronSourceAdInfo adInfo) { _debugUiText.text = "Ad Show Event"; }
+    //private void AdShowFailEvent(IronSourceError adError, IronSourceAdInfo adInfo) { _debugUiText.text = "Ad Show Fail Event"; }
 }

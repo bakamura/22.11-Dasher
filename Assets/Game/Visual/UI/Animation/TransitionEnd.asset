@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: TransitionEnd
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 1988212271016644995, guid: 88e46adc132c28042a1268e67d9d74e3, type: 3}
-  - {fileID: 1988212271016644995, guid: 88e46adc132c28042a1268e67d9d74e3, type: 3}
-  - {fileID: 1988212271016644995, guid: 88e46adc132c28042a1268e67d9d74e3, type: 3}
-  - {fileID: -829741361301007674, guid: 88e46adc132c28042a1268e67d9d74e3, type: 3}
+  - {fileID: -7909863675344608486, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
+  - {fileID: -5960321940836709115, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
+  - {fileID: -414429759568225197, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
+  - {fileID: -6073544962375238269, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
   - {fileID: 0}
-  speed: 4
+  speed: 8
   loop: 0

@@ -24,21 +24,21 @@ public class Settings : MonoBehaviour {
     }
 
     public void ToggleMusic() {
-        _musicBtnImage.sprite = _musicBtnImage.sprite == _musicBtnSprite[0] ? _musicBtnSprite[1] : _musicBtnSprite[0];
-
         _mixer.GetFloat("VolMusic", out float f);
-        _mixer.SetFloat("VolMusic", f == -80f ? 0f : -80f);
 
-        SaveSystem.instance.ToggleAudio(SaveSystem.AudioType.Music, f == -80f);
+        bool b = f == -80f;
+        _mixer.SetFloat("VolMusic", b ? 0f : -80f);
+        _musicBtnImage.sprite = b ? _musicBtnSprite[0] : _musicBtnSprite[1];
+        SaveSystem.instance.ToggleAudio(SaveSystem.AudioType.Music, b);
     }
 
     public void ToggleSfx() {
-        _sfxBtnImage.sprite = _sfxBtnImage.sprite == _sfxBtnSprite[0] ? _sfxBtnSprite[1] : _sfxBtnSprite[0];
-
         _mixer.GetFloat("VolSfx", out float f);
-        _mixer.SetFloat("VolSfx", f == -80f ? 0 : -80f);
 
-        SaveSystem.instance.ToggleAudio(SaveSystem.AudioType.Sfx, f == -80f);
+        bool b = f == -80f;
+        _mixer.SetFloat("VolSfx", b ? 0 : -80f);
+        _sfxBtnImage.sprite = b ? _sfxBtnSprite[0] : _sfxBtnSprite[1];
+        SaveSystem.instance.ToggleAudio(SaveSystem.AudioType.Sfx, b);
     }
 
 }
