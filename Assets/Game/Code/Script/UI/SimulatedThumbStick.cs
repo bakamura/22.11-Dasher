@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class SimulatedThumbStick : MonoBehaviour {
+public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
 
     [Header("Parameters")]
 
@@ -11,13 +12,17 @@ public class SimulatedThumbStick : MonoBehaviour {
     [SerializeField] private float _thumbStickDragMin;
     [SerializeField] private float _thumbStickDragMax;
     [SerializeField] private float _thumbStickRecognitionMax;
+    [HideInInspector] public UnityEvent<Vector2> onThumbStickHold = new UnityEvent<Vector2>();
+    [HideInInspector] public UnityEvent onThumbStickRelease = new UnityEvent();
 
     [Header("Cache")]
 
     private Touch _touch;
     private Vector2 _touchDirection;
 
-    private void Awake() {
+    protected override void Awake() {
+        base.Awake();
+
         _thumbStickContainerRectTransform = _thumbStickRectTransform.parent.gameObject;
         _thumbStickContainerPos = _thumbStickRectTransform.position;
     }
@@ -37,10 +42,12 @@ public class SimulatedThumbStick : MonoBehaviour {
                 _touchDirection = (Vector2)Input.mousePosition - _thumbStickContainerPos;
                 _thumbStickRectTransform.anchoredPosition = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax) ?
                                                             Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
+                onThumbStickHold.Invoke(_touchDirection);
             }
             else if (Input.GetMouseButtonUp(0)) {
                 if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) PlayerDash.instance.Dash(_touchDirection);
                 _thumbStickRectTransform.anchoredPosition = Vector2.zero;
+                onThumbStickRelease?.Invoke();
             }
         }
 #endif
@@ -52,11 +59,15 @@ public class SimulatedThumbStick : MonoBehaviour {
             _touchDirection = _touch.position - _thumbStickContainerPos;
             if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) {
                 if (_touch.phase == TouchPhase.Ended) {
-                    PlayerDash.instance.Dash(_touchDirection);
+                    PlayerDash.instance.Dash(_touchDirection); // Subscribe to onThumbStickRelease
                     _thumbStickRectTransform.anchoredPosition = Vector2.zero;
+                    onThumbStickRelease?.Invoke();
                 }
-                else _thumbStickRectTransform.anchoredPosition = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax) ?
+                else {
+                    _thumbStickRectTransform.anchoredPosition = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax) ?
                                                                  Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
+                    onThumbStickHold.Invoke(_touchDirection);
+                }
             }
         }
     }
@@ -77,6 +88,8 @@ public class SimulatedThumbStick : MonoBehaviour {
 
     private IEnumerator ShowInputRoutine() {
         yield return null;
+        yield return null; //
+        yield return null; //
 
         ToggleInput(true);
     }

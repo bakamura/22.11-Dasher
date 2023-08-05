@@ -13,8 +13,23 @@ EditorBuildSettings:
     guid: de963323cc097f243a8c2014a93f1fc2
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/2_TestLevel1.unity
-    guid: dde17c0bd0dbeb942b538da30a41ec8a
+    guid: b50615fd956494c4e91495cae26c773a
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/3_TestLevel2.unity
-    guid: f738d5141d7e674418fee4cb1e7b3b01
+    guid: 03e60f69b932ccd4ab57c2fbc2f892e3
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/4_TestLevel3.unity
+    guid: 535d8cdd5506ae240baa4dc598ef8e2f
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/5_TestLevel4.unity
+    guid: afe301106fd3d9a42b6e6d70cad3da4f
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/6_TestLevel5.unity
+    guid: d78347bae9afc9a408d0494a4cca7c32
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/7_TestLevel6.unity
+    guid: 2b5ba9e06a639ae45871181610f7b21e
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/8_TestLevel7.unity
+    guid: 47dd4dabd1e38c540b2d37a2661072d6
   m_configObjects: {}

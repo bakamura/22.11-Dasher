@@ -32,6 +32,12 @@ public class SaveSystem : Singleton<SaveSystem> {
         progressPath = Application.persistentDataPath + "/progress.data";
         settingsPath = Application.persistentDataPath + "/settings.data";
         SaveLoad();
+
+        // Checks for updates
+        if (progress.LevelCount() < SceneManager.sceneCountInBuildSettings - 1) {
+            progress.UpdateLevelCount(SceneManager.sceneCountInBuildSettings - 1);
+            SaveUpdate(SaveType.Progress);
+        }
     }
 
     private void SaveLoad() {

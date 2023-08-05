@@ -11,4 +11,16 @@ public class SaveProgress {
         levelCleared = new bool[levelCount];
         levelClearTime = new TimeSpan[levelCount];
     }
+
+    public int LevelCount() => levelCleared.Length;
+
+    public void UpdateLevelCount(int newLevelCount) {
+        bool[] b = new bool[newLevelCount];
+        for (int i = 0; i < levelCleared.Length; i++) b[i] = levelCleared[i];
+        levelCleared = b;
+
+        TimeSpan[] tS = new TimeSpan[newLevelCount];
+        for (int i = 0; i < levelClearTime.Length; i++) tS[i] = levelClearTime[i];
+        levelClearTime = tS;
+    }
 }

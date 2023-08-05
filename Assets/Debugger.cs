@@ -7,10 +7,10 @@ public class Debugger : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI _debugUiText;
 
-    private void Start() {
-        Debug.Log("MusicOn is: " + SaveSystem.instance.settings.musicOn);
-        Debug.Log("SfxOn is: " + SaveSystem.instance.settings.sfxOn);
-    }
+    //private void Start() {
+    //    Debug.Log("MusicOn is: " + SaveSystem.instance.settings.musicOn);
+    //    Debug.Log("SfxOn is: " + SaveSystem.instance.settings.sfxOn);
+    //}
 
     //private void Start() {
     //    IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.InterstitialAdReadyEvent, AdLoadEvent);
