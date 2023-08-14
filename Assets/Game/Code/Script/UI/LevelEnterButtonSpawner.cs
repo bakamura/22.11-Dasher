@@ -10,17 +10,17 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
     [SerializeField] private GameObject _levelEnterBtnPrefab;
     [SerializeField] private Transform _btnParent;
 
-    private void Start() {
-        InstantiateButons();
-    }
-
-    private void InstantiateButons() {
-        GameObject btn;
-        for (int i = 1; i < SceneManager.sceneCountInBuildSettings; i++) {
-            btn = Instantiate(_levelEnterBtnPrefab, _btnParent);
-            btn.GetComponent<Button>().onClick.AddListener(() => LevelManager.instance.GoToScene(i)); // Because it's not possible to change parameters in an already present action
-            btn.GetComponentInChildren<TextMeshProUGUI>().text = i.ToString();
+    public Button[] InstantiateButons() {
+        Button[] btn = new Button[SceneManager.sceneCountInBuildSettings - 1];
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings - 1; i++) {
+            int sceneId = i + 1;
+            btn[i] = Instantiate(_levelEnterBtnPrefab, _btnParent).GetComponent<Button>();
+            btn[i].onClick.AddListener(() => LevelManager.instance.GoToScene(sceneId)); // Because it's not possible to change parameters in an already present action
+            btn[i].GetComponentInChildren<TextMeshProUGUI>().text = (sceneId).ToString();
+            if(i > 0) btn[i].interactable = SaveSystem.instance.progress.levelCleared[i - 1]; // 
         }
+
+        return btn;
     }
 
 }

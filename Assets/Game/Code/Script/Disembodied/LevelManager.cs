@@ -9,6 +9,8 @@ public class LevelManager : Singleton<LevelManager> {
 
     [HideInInspector] public UnityEvent onLevelEnter = new UnityEvent(); // Needed only if PlayerInitialPos setter will use it
     [HideInInspector] public UnityEvent onLevelStart = new UnityEvent();
+    [SerializeField] private int _retryUntilAd;
+    private int _retryAmount = 0;
 
     [Header("Cache")]
 
@@ -31,53 +33,67 @@ public class LevelManager : Singleton<LevelManager> {
     }
 
     public void GoToScene(int sceneId) {
-        StartCoroutine(GoToSceneRoutine(sceneId));
+        if (sceneId != SceneManager.GetSceneAt(1).buildIndex) StartCoroutine(GoToSceneRoutine((sceneId == 0 && SaveSystem.instance.progress.levelCurrent == SceneManager.sceneCountInBuildSettings - 1) ? 1 : sceneId));
     }
 
     private IEnumerator GoToSceneRoutine(int sceneId) {
-        if (sceneId == 0) sceneId = SaveSystem.instance.progress.levelCurrent + 1;
-        if (sceneId >= SceneManager.sceneCountInBuildSettings) sceneId = 1;
         _hud.PauseBtn(false);
-
         _transitionAnimationHandler.TransitionStartAnimation();
 
         yield return _transitionStartWait;
 
         IronSourceHandler.instance.InterstitialShow();
-
-        AsyncOperation loadOperation = SceneManager.UnloadSceneAsync(SaveSystem.instance.progress.levelCurrent);
+        AsyncOperation loadOperation = SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
 
         yield return loadOperation;
 
-        SaveSystem.instance.progress.levelCurrent = sceneId;
+        loadOperation = SceneManager.LoadSceneAsync(sceneId == 0 ? SaveSystem.instance.progress.levelCurrent : sceneId, LoadSceneMode.Additive);
+        SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
         SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
-        loadOperation = SceneManager.LoadSceneAsync(SaveSystem.instance.progress.levelCurrent, LoadSceneMode.Additive);
 
         yield return loadOperation;
 
-        while (_waitForAd) {
-            yield return null;
-        }
+        while (_waitForAd) { yield return null; }
 
         _transitionAnimationHandler.TransitionEndAnimation();
 
         yield return _transitionEndWait;
 
-
         onLevelEnter?.Invoke();
-        RestartBtn();
+        _hud.PauseBtn(true);
+        onLevelStart.Invoke();
     }
 
     public void RestartBtn() {
-        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
+        StartCoroutine(RetryRoutine());
+    }
+
+    private IEnumerator RetryRoutine() {
+        _transitionAnimationHandler.TransitionStartAnimation();
+
+        yield return _transitionStartWait;
+
+        SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
+        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress); // In order to save the player wants to continue on this level
+
+        _retryAmount++;
+        if (_retryAmount >= _retryUntilAd) {
+            IronSourceHandler.instance.InterstitialShow();
+        }
+        while (_waitForAd) { yield return null; }
+
+        onLevelStart.Invoke();
+
+        _transitionAnimationHandler.TransitionEndAnimation();
+
+        yield return _transitionEndWait;
 
         _hud.PauseBtn(true);
-        onLevelStart.Invoke();
-        // Show Ad here ? Probably not, frustration on retry-players builds faster and lead to disengagement
     }
 
     private void AdOpened(IronSourceAdInfo adInfo) {
         _waitForAd = true;
+        _retryAmount = 0;
     }
 
     private void AdClosed(IronSourceAdInfo adInfo) {

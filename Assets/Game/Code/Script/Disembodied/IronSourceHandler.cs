@@ -232,8 +232,8 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
             StartCoroutine(InterstitialLoad());
         }
         else {
-            Debug.Log("Interstitial Ready: " + IronSource.Agent.isInterstitialReady() +
-                      "\n Interstitial Placement Capped:" + IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT));
+            //Debug.Log("Interstitial Ready: " + IronSource.Agent.isInterstitialReady() +
+            //          "\n Interstitial Placement Capped:" + IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT));
         }
     }
 

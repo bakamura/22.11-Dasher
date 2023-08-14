@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SuccessDisplay : Singleton<SuccessDisplay> {
 
@@ -37,9 +38,9 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     private IEnumerator ShowDisplayRoutine() {
         TimeSpan span = TimeSpan.FromSeconds(Time.timeSinceLevelLoad - _timeAtStart);
         _timeTakenText.text = _textBeforeTime + span.ToString(@"m\:ss\.fff"); // Check what happens if more than 10mins
-        SaveSystem.instance.CompleteLevel(span);
 
-        _hud.LevelEnterBtnUpdate();
+        if(SaveSystem.instance.progress.levelCurrent < SceneManager.sceneCountInBuildSettings - 1) _hud._levelSelectBtn[SaveSystem.instance.progress.levelCurrent].interactable = true; // Update buttons, has to happen BEFORE SaveSystem.ComleteLevel
+        SaveSystem.instance.CompleteLevel(span);
 
         _successDisplayRectTransform.anchoredPosition = _successDisplayInitialPos;
 
