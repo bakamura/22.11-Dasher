@@ -38,6 +38,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
         TimeSpan span = TimeSpan.FromSeconds(Time.timeSinceLevelLoad - _timeAtStart);
         _timeTakenText.text = _textBeforeTime + span.ToString(@"m\:ss\.fff"); // Check what happens if more than 10mins
         SaveSystem.instance.CompleteLevel(span);
+
         _hud.LevelEnterBtnUpdate();
 
         _successDisplayRectTransform.anchoredPosition = _successDisplayInitialPos;

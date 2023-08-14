@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision == PlayerDash.instance.col) {
-            onGoal.Invoke();
+            onGoal?.Invoke();
             _col.enabled = false;
         }
     }

@@ -19,6 +19,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
 
     private Touch _touch;
     private Vector2 _touchDirection;
+    private bool _isInRange;
 
     protected override void Awake() {
         base.Awake();
@@ -40,9 +41,10 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
         if (_thumbStickContainerRectTransform.activeSelf) {
             if (Input.GetMouseButton(0)) {
                 _touchDirection = (Vector2)Input.mousePosition - _thumbStickContainerPos;
-                _thumbStickRectTransform.anchoredPosition = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax) ?
-                                                            Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
-                onThumbStickHold.Invoke(_touchDirection);
+
+                _isInRange = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax);
+                _thumbStickRectTransform.anchoredPosition = _isInRange ? Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
+                if (_isInRange) onThumbStickHold?.Invoke(_touchDirection);
             }
             else if (Input.GetMouseButtonUp(0)) {
                 if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) PlayerDash.instance.Dash(_touchDirection);
@@ -64,9 +66,9 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
                     onThumbStickRelease?.Invoke();
                 }
                 else {
-                    _thumbStickRectTransform.anchoredPosition = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax) ?
-                                                                 Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
-                    onThumbStickHold.Invoke(_touchDirection);
+                    _isInRange = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax);
+                    _thumbStickRectTransform.anchoredPosition = _isInRange ? Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
+                    if(_isInRange) onThumbStickHold?.Invoke(_touchDirection);
                 }
             }
         }

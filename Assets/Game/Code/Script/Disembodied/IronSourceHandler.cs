@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+// This script is bloated. When building into final project, eliminate unused parts
 public class IronSourceHandler : Singleton<IronSourceHandler> {
 
 #if UNITY_ANDROID
@@ -12,12 +13,18 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
     private readonly static string INTERSTITIAL_PLACEMENT = "Interstitial_iOS";
 #endif
 
+    [Header("Parameters")]
+
+    [SerializeField] private float _interstitialLoadCheck;
+
+    [Header("Cache")]
+
     private WaitForSeconds _interstitialLoadCheckWait;
 
     protected override void Awake() {
         base.Awake();
 
-        _interstitialLoadCheckWait = new WaitForSeconds(30f);
+        _interstitialLoadCheckWait = new WaitForSeconds(_interstitialLoadCheck);
 
         IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
     }
@@ -27,10 +34,6 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
         IronSource.Agent.shouldTrackNetworkState(true);
         StartCoroutine(InterstitialLoad());
     }
-
-    //private void OnEnable() {
-    //    IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
-    //}
 
     private void OnApplicationPause(bool isPaused) {
         IronSource.Agent.onApplicationPause(isPaused);

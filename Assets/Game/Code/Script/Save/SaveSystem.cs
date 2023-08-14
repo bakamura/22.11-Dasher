@@ -63,7 +63,7 @@ public class SaveSystem : Singleton<SaveSystem> {
         }
     }
 
-    private void SaveUpdate(SaveType type) {
+    public void SaveUpdate(SaveType type) {
         if (File.Exists(type == SaveType.Progress ? progressPath : settingsPath)) {
             streamCurrent = File.Open(type == SaveType.Progress ? progressPath : settingsPath, FileMode.Open);
             formatter.Serialize(streamCurrent, type == SaveType.Progress ? (object)progress : (object)settings);
@@ -86,7 +86,8 @@ public class SaveSystem : Singleton<SaveSystem> {
     public void CompleteLevel(TimeSpan time) {
         progress.levelCleared[progress.levelCurrent - 1] = true;
         progress.levelClearTime[progress.levelCurrent - 1] = time;
-        
+
+        if(progress.levelCurrent + 1 < SceneManager.sceneCountInBuildSettings) progress.levelCurrent++;
         SaveUpdate(SaveType.Progress);
     }
 

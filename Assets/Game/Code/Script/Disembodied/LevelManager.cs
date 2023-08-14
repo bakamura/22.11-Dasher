@@ -36,7 +36,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     private IEnumerator GoToSceneRoutine(int sceneId) {
         if (sceneId == 0) sceneId = SaveSystem.instance.progress.levelCurrent + 1;
-
+        if (sceneId >= SceneManager.sceneCountInBuildSettings) sceneId = 1;
         _hud.PauseBtn(false);
 
         _transitionAnimationHandler.TransitionStartAnimation();
@@ -50,6 +50,7 @@ public class LevelManager : Singleton<LevelManager> {
         yield return loadOperation;
 
         SaveSystem.instance.progress.levelCurrent = sceneId;
+        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
         loadOperation = SceneManager.LoadSceneAsync(SaveSystem.instance.progress.levelCurrent, LoadSceneMode.Additive);
 
         yield return loadOperation;
@@ -68,6 +69,8 @@ public class LevelManager : Singleton<LevelManager> {
     }
 
     public void RestartBtn() {
+        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
+
         _hud.PauseBtn(true);
         onLevelStart.Invoke();
         // Show Ad here ? Probably not, frustration on retry-players builds faster and lead to disengagement
