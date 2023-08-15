@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db328496e5c21924d8ae8cd79654d7a9, type: 3}
-  m_Name: PlayerIdle
+  m_Name: PlayerFall
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -3866191921110494400, guid: b81ae5c43dd99654a815f0712cace800, type: 3}
+  - {fileID: -5428541742826164604, guid: b81ae5c43dd99654a815f0712cace800, type: 3}
   speed: 1
-  loop: 1
+  loop: 0

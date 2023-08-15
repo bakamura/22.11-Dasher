@@ -369,7 +369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5272965240533437616, guid: c15dc47bda0a473429827368bccb5cd7, type: 3}
+  m_Sprite: {fileID: -4275520273023915884, guid: 4d271eb810d46b7439f33efb803f49fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4640652591572444922, guid: c15dc47bda0a473429827368bccb5cd7, type: 3}
+  m_Sprite: {fileID: -906053133595977803, guid: 4d271eb810d46b7439f33efb803f49fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1744,7 +1744,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2791381026813644536, guid: 5c1e0e1e1d2396e4385897eb37740d0f, type: 3}
+  m_Sprite: {fileID: -3866191921110494400, guid: b81ae5c43dd99654a815f0712cace800, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1836,8 +1836,8 @@ MonoBehaviour:
   onDashReady:
     m_PersistentCalls:
       m_Calls: []
-  _groundCheckPos: {x: 0, y: -0.55}
-  _groundCheckBox: {x: 0.9, y: 0.1}
+  _groundCheckPos: {x: 0, y: -0.525}
+  _groundCheckBox: {x: 0.75, y: 0.05}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1859,6 +1859,8 @@ MonoBehaviour:
   _animation:
   - {fileID: 11400000, guid: f6d3f1e52d83b524f8e25e67d264765a, type: 2}
   - {fileID: 11400000, guid: 8494bd3f9e6fae143a1e068c856acaa8, type: 2}
+  - {fileID: 11400000, guid: 3eb8f20873d074946bcb46492930f794, type: 2}
+  _flipVelocityTreshould: 0.05
   _arrowIndicatorTransform: {fileID: 608278415}
 --- !u!1 &1008653594
 GameObject:
@@ -3250,7 +3252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4640652591572444922, guid: c15dc47bda0a473429827368bccb5cd7, type: 3}
+  m_Sprite: {fileID: -906053133595977803, guid: 4d271eb810d46b7439f33efb803f49fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3365,7 +3367,7 @@ SpriteRenderer:
   m_SortingLayerID: -2062359453
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 591c817b66efc274a9ac97bd08149b6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd7b52794c425bd48be6632fb21f6c8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
