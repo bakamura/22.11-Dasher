@@ -47,14 +47,12 @@ public class LevelManager : Singleton<LevelManager> {
 
         yield return loadOperation;
 
-        print(SaveSystem.instance.progress.levelCurrent); // 9
         loadOperation = SceneManager.LoadSceneAsync(sceneId == 0 ? SaveSystem.instance.progress.levelCurrent : sceneId, LoadSceneMode.Additive);
         SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
 
         yield return loadOperation;
-        SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
-        print(SaveSystem.instance.progress.levelCurrent); // 1
 
+        SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
         while (_waitForAd) { yield return null; }
 
         _transitionAnimationHandler.TransitionEndAnimation();
