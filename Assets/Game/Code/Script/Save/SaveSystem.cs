@@ -34,9 +34,11 @@ public class SaveSystem : Singleton<SaveSystem> {
         SaveLoad();
 
         // Checks for updates
-        if (progress.LevelCount() < SceneManager.sceneCountInBuildSettings - 1) {
-            progress.UpdateLevelCount(SceneManager.sceneCountInBuildSettings - 1);
+        int levelAmount = SceneManager.sceneCountInBuildSettings - 1;
+        if (progress.LevelCount() < levelAmount) {
+            progress.UpdateLevelCount(levelAmount);
             SaveUpdate(SaveType.Progress);
+            Debug.Log("Level Count Updated!"); //
         }
     }
 

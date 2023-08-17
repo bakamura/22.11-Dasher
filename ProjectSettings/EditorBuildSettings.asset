@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/8_TestLevel7.unity
     guid: 47dd4dabd1e38c540b2d37a2661072d6
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/9_TestLevel8.unity
+    guid: 5bd24f642e3bc1d43bc43377aadeb653
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/10_TestLevel9.unity
+    guid: 1344e0f494929b64daffb6afa26ed074
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/11_TestLevel10.unity
+    guid: e891ee68ca0edd149810cb4ba33d9a70
   m_configObjects: {}
