@@ -10,7 +10,7 @@ public class LevelManager : Singleton<LevelManager> {
     [HideInInspector] public UnityEvent onLevelEnter = new UnityEvent(); // Needed only if PlayerInitialPos setter will use it
     [HideInInspector] public UnityEvent onLevelStart = new UnityEvent();
     [SerializeField] private int _retryUntilAd;
-    private int _retryAmount = 0;
+    private int _adShowRetryAmount = 0;
 
     [Header("Cache")]
 
@@ -76,10 +76,9 @@ public class LevelManager : Singleton<LevelManager> {
         SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
         SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress); // In order to save the player wants to continue on this level
 
-        _retryAmount++;
-        if (_retryAmount >= _retryUntilAd) {
-            IronSourceHandler.instance.InterstitialShow();
-        }
+        _adShowRetryAmount++;
+        if (_adShowRetryAmount >= _retryUntilAd) IronSourceHandler.instance.InterstitialShow();
+
         while (_waitForAd) { yield return null; }
 
         onLevelStart.Invoke();
@@ -93,7 +92,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     private void AdOpened(IronSourceAdInfo adInfo) {
         _waitForAd = true;
-        _retryAmount = 0;
+        _adShowRetryAmount = 0;
     }
 
     private void AdClosed(IronSourceAdInfo adInfo) {

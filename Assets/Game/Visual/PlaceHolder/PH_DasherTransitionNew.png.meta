@@ -1,31 +1,37 @@
 fileFormatVersion: 2
-guid: c15dc47bda0a473429827368bccb5cd7
+guid: aeebe66bab7089f40856566f22601041
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5272965240533437616
-    second: PH_DasherUI_2
+      213: -8622870976155903519
+    second: PH_DasherTransitionNew_0
   - first:
-      213: -5430642927404315651
-    second: PH_DasherUI_3
+      213: 3992608163303567348
+    second: PH_DasherTransitionNew_1
   - first:
-      213: -3034782496120149029
-    second: PH_DasherUI_4
+      213: -7282631091398364178
+    second: PH_DasherTransitionNew_2
   - first:
-      213: 4309833971620399076
-    second: PH_DasherUI_5
+      213: -4079242898947166
+    second: PH_DasherTransitionNew_3
   - first:
-      213: -4640652591572444922
-    second: PH_DasherUI_6
+      213: -2363893589326004750
+    second: PH_DasherTransitionNew_4
   - first:
-      213: 664934606615308082
-    second: PH_DasherUI_7
+      213: -2365149961552555519
+    second: PH_DasherTransitionNew_5
   - first:
-      213: -6599515415295949531
-    second: PH_DasherUI_8
+      213: 386958088899734729
+    second: PH_DasherTransitionNew_6
   - first:
-      213: -5343270147305300363
-    second: PH_DasherUI_9
+      213: -205373021976242192
+    second: PH_DasherTransitionNew_7
+  - first:
+      213: -8083050837472123767
+    second: PH_DasherTransitionNew_8
+  - first:
+      213: 2071667403188666393
+    second: PH_DasherTransitionNew_9
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -70,7 +76,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -125,7 +131,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -140,211 +146,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PH_DasherUI_0
+      name: PH_DasherTransitionNew_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ffdaa5f6e80b4370800000000000000
-      internalID: 8307743725672128503
+      spriteID: 1e9933a7888655880800000000000000
+      internalID: -8622870976155903519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_1
+      name: PH_DasherTransitionNew_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
-        width: 64
-        height: 64
+        x: 7
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7696abb134c20010800000000000000
-      internalID: 1153700172440966783
+      spriteID: 4ffa80588f7986730800000000000000
+      internalID: 3992608163303567348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_2
+      name: PH_DasherTransitionNew_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
-        width: 48
-        height: 48
+        x: 14
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 053b5051d0aa2d6b0800000000000000
-      internalID: -5272965240533437616
+      spriteID: ee33cfe7b95eeea90800000000000000
+      internalID: -7282631091398364178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_3
+      name: PH_DasherTransitionNew_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 144
-        width: 48
-        height: 48
+        x: 21
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfb0412c70b72a4b0800000000000000
-      internalID: -5430642927404315651
+      spriteID: 2a34e0043f181fff0800000000000000
+      internalID: -4079242898947166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_4
+      name: PH_DasherTransitionNew_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 144
-        width: 48
-        height: 48
+        x: 28
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdb6f24166942e5d0800000000000000
-      internalID: -3034782496120149029
+      spriteID: 2fd76611e43c13fd0800000000000000
+      internalID: -2363893589326004750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_5
+      name: PH_DasherTransitionNew_5
       rect:
         serializedVersion: 2
-        x: 144
-        y: 144
-        width: 48
-        height: 48
+        x: 35
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e74857a92b9fcb30800000000000000
-      internalID: 4309833971620399076
+      spriteID: 102912d14ac4d2fd0800000000000000
+      internalID: -2365149961552555519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_6
+      name: PH_DasherTransitionNew_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 48
-        height: 48
+        x: 42
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 10, z: 10, w: 10}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60914512e07199fb0800000000000000
-      internalID: -4640652591572444922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PH_DasherUI_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2376b2270825a3900800000000000000
-      internalID: 664934606615308082
+      spriteID: 9cc25d7e450ce5500800000000000000
+      internalID: 386958088899734729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_8
+      name: PH_DasherTransitionNew_7
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 48
-        height: 48
+        x: 49
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 525029d02bfc964a0800000000000000
-      internalID: -6599515415295949531
+      spriteID: 0f758aa135e562df0800000000000000
+      internalID: -205373021976242192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherUI_9
+      name: PH_DasherTransitionNew_8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
-        width: 48
-        height: 48
+        x: 56
+        y: 0
+        width: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57e1be26c14e8d5b0800000000000000
-      internalID: -5343270147305300363
+      spriteID: 984ec03d61c33df80800000000000000
+      internalID: -8083050837472123767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PH_DasherTransitionNew_9
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91001dbe68a00cc10800000000000000
+      internalID: 2071667403188666393
       vertices: []
       indices: 
       edges: []

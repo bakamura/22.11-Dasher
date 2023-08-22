@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: TransitionStart
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -6073544962375238269, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
-  - {fileID: -414429759568225197, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
-  - {fileID: -5960321940836709115, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
-  - {fileID: -7909863675344608486, guid: c74d292aa1ff0cf4582dd2a889665d37, type: 3}
-  speed: 8
+  - {fileID: -8622870976155903519, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: 3992608163303567348, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: -7282631091398364178, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: -4079242898947166, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: -2363893589326004750, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: -2365149961552555519, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: 386958088899734729, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: -205373021976242192, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: -8083050837472123767, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  - {fileID: 2071667403188666393, guid: aeebe66bab7089f40856566f22601041, type: 3}
+  speed: 20
   loop: 0
