@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae8f049093a430c4aba2a31f568e226e
+guid: 50edfaccd38652043a850a1db03501a9
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,9 +9,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Tricks Hollow
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 40bee06f534e0a04d85178095e2be817, type: 3}
+  - Paladins
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
