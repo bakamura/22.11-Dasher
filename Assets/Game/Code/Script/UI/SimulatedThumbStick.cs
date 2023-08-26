@@ -14,6 +14,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
     [SerializeField] private float _thumbStickRecognitionMax;
     [HideInInspector] public UnityEvent<Vector2> onThumbStickHold = new UnityEvent<Vector2>();
     [HideInInspector] public UnityEvent onThumbStickRelease = new UnityEvent();
+    [HideInInspector] public UnityEvent onThumbStickCancel = new UnityEvent();
 
     [Header("Cache")]
 
@@ -45,6 +46,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
                 _isInRange = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax);
                 _thumbStickRectTransform.anchoredPosition = _isInRange ? Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
                 if (_isInRange) onThumbStickHold?.Invoke(_touchDirection);
+                else onThumbStickCancel?.Invoke();
             }
             else if (Input.GetMouseButtonUp(0)) {
                 if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) PlayerDash.instance.Dash(_touchDirection);
@@ -69,6 +71,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
                     _isInRange = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax);
                     _thumbStickRectTransform.anchoredPosition = _isInRange ? Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
                     if(_isInRange) onThumbStickHold?.Invoke(_touchDirection);
+                    else onThumbStickCancel?.Invoke();
                 }
             }
         }

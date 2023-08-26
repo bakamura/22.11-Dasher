@@ -36,6 +36,7 @@ public class PlayerAnimation : AnimationHandler {
         dashScript.onDash.AddListener(CannotShowArrow);
         SimulatedThumbStick.instance.onThumbStickHold.AddListener(ArrowDirectionUpdate);
         SimulatedThumbStick.instance.onThumbStickRelease.AddListener(HideArrow);
+        SimulatedThumbStick.instance.onThumbStickCancel.AddListener(HideArrow);
     }
 
     private void Update() {
