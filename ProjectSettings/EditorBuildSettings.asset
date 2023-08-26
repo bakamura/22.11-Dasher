@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/11_TestLevel10.unity
     guid: e891ee68ca0edd149810cb4ba33d9a70
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/12_TestLevel11.unity
+    guid: 62de9df077e1ae94c95e136adf5600ce
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/13_TestLevel12.unity
+    guid: b368aca77e8eef54ba4ff3dce58338b0
   m_configObjects: {}
