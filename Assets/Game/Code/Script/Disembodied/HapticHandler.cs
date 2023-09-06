@@ -14,12 +14,13 @@ public class HapticHandler : Singleton<HapticHandler> {
         base.Awake();
 
         if (IsAndroid()) {
+            Debug.Log("Is an Android Phone");
             //_hapticFeedbackConstantsKey = new AndroidJavaClass("android.view.HapticFeedbackConstants").GetStatic<int>("VIRTUAL_KEY");
             //_unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity").Get<AndroidJavaObject>("mUnityPlayer");
 
             //_unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             _currentActivity = _unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-            _vibrator = _currentActivity.Call<AndroidJavaObject>("getSystemService", "Vibrator");
+            _vibrator = _currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
         }
     }
 
