@@ -4,7 +4,7 @@ public class Menu : MonoBehaviour {
 
     [Header("Parameters")]
 
-    [SerializeField] protected GameObject _currentMenu;
+    protected GameObject _currentMenu;
 
     private void Start() {
         OpenMenu(_currentMenu);

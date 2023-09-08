@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Diagnostics;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +24,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     [Header("Cache")]
 
     private HUD _hud;
+    private TimeScoreDisplay _timeScoreDisplay;
 
     private void Start() {
         PlayerDash.instance.onDash.AddListener(StartTimer);
@@ -29,6 +32,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
         FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
 
         _hud = FindObjectOfType<HUD>();
+        _timeScoreDisplay = FindObjectOfType<TimeScoreDisplay>();
     }
 
     private void ShowDisplay() {
@@ -40,10 +44,10 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
         _timeTakenText.text = _textBeforeTime + span.ToString(@"m\:ss\.fff"); // Check what happens if more than 10mins
 
         if(SaveSystem.instance.progress.levelCurrent < SceneManager.sceneCountInBuildSettings - 1) _hud._levelSelectBtn[SaveSystem.instance.progress.levelCurrent].interactable = true; // Update buttons, has to happen BEFORE SaveSystem.ComleteLevel
+        if(SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1] == TimeSpan.Zero || span < SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1]) 
+            _timeScoreDisplay.ScoreTextUpdate(SaveSystem.instance.progress.levelCurrent - 1, span);
         SaveSystem.instance.CompleteLevel(span);
-
         _successDisplayRectTransform.anchoredPosition = _successDisplayInitialPos;
-
         float animation = 0;
         while (true) {
             yield return null;

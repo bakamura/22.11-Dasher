@@ -37,7 +37,10 @@ public class LevelManager : Singleton<LevelManager> {
     }
 
     private IEnumerator GoToSceneRoutine(int sceneId) {
-        _hud.PauseBtn(false);
+        //_hud.PauseBtn(false);
+        Time.timeScale = 1;
+        _hud.ShowPauseBtn();
+
         _transitionAnimationHandler.TransitionStartAnimation();
 
         yield return _transitionStartWait;
@@ -55,13 +58,14 @@ public class LevelManager : Singleton<LevelManager> {
         SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
         while (_waitForAd) { yield return null; }
 
+        onLevelEnter?.Invoke();
+        _hud.PauseBtn(true);
+        onLevelStart.Invoke();
+
         _transitionAnimationHandler.TransitionEndAnimation();
 
         yield return _transitionEndWait;
 
-        onLevelEnter?.Invoke();
-        _hud.PauseBtn(true);
-        onLevelStart.Invoke();
     }
 
     public void RestartBtn() {
@@ -69,6 +73,7 @@ public class LevelManager : Singleton<LevelManager> {
     }
 
     private IEnumerator RetryRoutine() {
+        Time.timeScale = 1;
         _transitionAnimationHandler.TransitionStartAnimation();
 
         yield return _transitionStartWait;
