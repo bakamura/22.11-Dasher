@@ -24,7 +24,6 @@ public class SfxHandler : MonoBehaviour {
     }
 
     public void PlaySfx(AudioClip sfx) {
-        //_as.clip = sfx;
         _as.PlayOneShot(sfx);
     }
 
