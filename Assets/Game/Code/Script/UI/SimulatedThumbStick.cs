@@ -66,14 +66,12 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
                     PlayerDash.instance.Dash(_touchDirection); // Subscribe to onThumbStickRelease
                     _thumbStickRectTransform.anchoredPosition = Vector2.zero;
                     onThumbStickRelease?.Invoke();
-                }
-                else {
-                    _isInRange = IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax);
+                } else {
                     _thumbStickRectTransform.anchoredPosition = _isInRange ? Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
-                    if(_isInRange) onThumbStickHold?.Invoke(_touchDirection);
-                    else onThumbStickCancel?.Invoke();
+                    onThumbStickHold?.Invoke(_touchDirection);
                 }
-            }
+            } 
+            else onThumbStickCancel?.Invoke();
         }
     }
 
