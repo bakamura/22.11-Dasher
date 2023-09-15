@@ -1394,9 +1394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67ffa2d2f6fbe74981f3a35da82489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashSfx: {fileID: 8300000, guid: be0f24d10627895489c2d7aa82a12071, type: 3}
-  _uiClickSfx: {fileID: 8300000, guid: e219b6fea2ea4c24f8f597a2a9b9a211, type: 3}
-  _victorySfx: {fileID: 8300000, guid: 994bda4f02e632e48a18ebea032fc5bb, type: 3}
+  _dashSfx: {fileID: 8300000, guid: a8110bd73092c12409bd57c3acda81ba, type: 3}
+  _dashResetSfx: {fileID: 8300000, guid: 7253b1441d29fe540805748998c40e0e, type: 3}
+  _dashResetterSfx: {fileID: 8300000, guid: 12936225167457c49b3cb43a42592445, type: 3}
+  _uiClickSfx: {fileID: 8300000, guid: 3b5474514923a0745804e5144775996d, type: 3}
+  _victorySfx: {fileID: 8300000, guid: 6234b4738c8b882479c2bd85e51c946e, type: 3}
 --- !u!1 &608278414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,7 +1840,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.2
 --- !u!222 &759237192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2118,7 +2120,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2
+  m_PixelsPerUnitMultiplier: 0.2
 --- !u!222 &811325502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2331,7 +2333,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0630ccd30e9d4d449a2d4b7b753c7072, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2449,7 +2451,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _groundCheckDelay: 0.45
+  _groundCheckDelay: 0.4
   initialPos: {x: 0, y: 0, z: 0}
   col: {fileID: 0}
 --- !u!114 &947752619
@@ -2651,7 +2653,7 @@ MonoBehaviour:
   m_text: Success
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87613b6199ea02a4db6a54a44e079fab, type: 2}
-  m_sharedMaterial: {fileID: -4352959695612906970, guid: 368d7d4f500a9cc48b5bfc6d3a0c5eb4, type: 2}
+  m_sharedMaterial: {fileID: 4170072976868381910, guid: 87613b6199ea02a4db6a54a44e079fab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3244,7 +3246,7 @@ MonoBehaviour:
   m_text: Time 0:00.000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87613b6199ea02a4db6a54a44e079fab, type: 2}
-  m_sharedMaterial: {fileID: 3297668559583308577, guid: 289b41f8509e85546ad8db4ce468e7cf, type: 2}
+  m_sharedMaterial: {fileID: 4170072976868381910, guid: 87613b6199ea02a4db6a54a44e079fab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3373,7 +3375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 300
+  m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 2160}
   m_ScreenMatchMode: 0
@@ -3443,9 +3445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thumbStickRectTransform: {fileID: 412706938}
-  _thumbStickDragMin: 50
   _thumbStickDragMax: 90
-  _thumbStickRecognitionMax: 600
+  _thumbStickRecognitionMin: 0.0075
+  _thumbStickRecognitionMax: 0.75
   onThumbStickHold:
     m_PersistentCalls:
       m_Calls: []

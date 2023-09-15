@@ -5,6 +5,8 @@ public class SfxHandler : MonoBehaviour {
     [Header("SFX List")]
 
     [SerializeField] private AudioClip _dashSfx;
+    [SerializeField] private AudioClip _dashResetSfx;
+    [SerializeField] private AudioClip _dashResetterSfx;
     [SerializeField] private AudioClip _uiClickSfx;
     [SerializeField] private AudioClip _victorySfx;
 
@@ -18,6 +20,7 @@ public class SfxHandler : MonoBehaviour {
 
     private void Start() {
         PlayerDash.instance.onDash.AddListener(DashSfx);
+        PlayerDash.instance.onDashReady.AddListener(DashResetSfx);
         Goal.onGoal.AddListener(VictorySFX);
     }
 
@@ -27,6 +30,10 @@ public class SfxHandler : MonoBehaviour {
 
     private void DashSfx(Vector2 v2) {
         PlaySfx(_dashSfx);
+    }
+
+    private void DashResetSfx() {
+        PlaySfx(_dashResetSfx);
     }
 
     public void UiClickSfx() {
