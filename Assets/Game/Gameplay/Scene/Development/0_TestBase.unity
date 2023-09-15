@@ -2331,7 +2331,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0630ccd30e9d4d449a2d4b7b753c7072, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2469,6 +2469,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8494bd3f9e6fae143a1e068c856acaa8, type: 2}
   - {fileID: 11400000, guid: 3eb8f20873d074946bcb46492930f794, type: 2}
   _flipVelocityTreshould: 0.05
+  _materialDashUp: {fileID: 2100000, guid: 0630ccd30e9d4d449a2d4b7b753c7072, type: 2}
+  _materialCooldown: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _arrowIndicatorTransform: {fileID: 608278415}
 --- !u!1 &1167852662
 GameObject:

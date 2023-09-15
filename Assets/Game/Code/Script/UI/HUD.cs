@@ -19,10 +19,7 @@ public class HUD : Menu {
 
     private void Start() {
         Goal.onGoal.AddListener(HidePauseBtn);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShowPauseBtn);
-        LevelEnterButtonSpawner spawner = GetComponent<LevelEnterButtonSpawner>();
-        _levelSelectBtn = spawner.InstantiateButons();
-        Destroy(spawner);
+        LevelManager.instance.onLevelStart.AddListener(ShowPauseBtn);
     }
 
     public void PauseBtn(bool notPausing) {

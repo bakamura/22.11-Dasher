@@ -10,7 +10,12 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
     [SerializeField] private GameObject _levelEnterBtnPrefab;
     [SerializeField] private RectTransform _btnParent;
 
-    public Button[] InstantiateButons() {
+    private void Start() {
+        FindObjectOfType<HUD>()._levelSelectBtn = InstantiateButtons();
+        Destroy(this);
+    }
+
+    private Button[] InstantiateButtons() {
         Button[] btn = new Button[SceneManager.sceneCountInBuildSettings - 1];
         GridLayoutGroup gridLayout = _btnParent.GetComponent<GridLayoutGroup>();
         Vector2 sizeParent = _btnParent.sizeDelta;

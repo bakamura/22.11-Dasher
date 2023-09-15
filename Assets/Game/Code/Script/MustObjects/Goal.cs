@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Goal : MonoBehaviour {
@@ -8,7 +8,7 @@ public class Goal : MonoBehaviour {
 
     private void Awake() {
         _col = GetComponent<Collider2D>();
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
+        LevelManager.instance.onLevelStart.AddListener(Restart);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

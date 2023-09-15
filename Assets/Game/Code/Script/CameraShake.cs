@@ -21,8 +21,8 @@ public class CameraShake : Singleton<CameraShake> {
     }
 
     private void Start() {
-        FindObjectOfType<PlayerDash>().onDash.AddListener(ShakeCamera);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShakeStop);
+        PlayerDash.instance.onDash.AddListener(ShakeCamera);
+        LevelManager.instance.onLevelStart.AddListener(ShakeStop);
     }
 
     private void ShakeCamera(Vector2 direction) {

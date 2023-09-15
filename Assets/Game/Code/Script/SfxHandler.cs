@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SfxHandler : MonoBehaviour {
@@ -19,7 +17,7 @@ public class SfxHandler : MonoBehaviour {
     }
 
     private void Start() {
-        FindObjectOfType<PlayerDash>().onDash.AddListener(DashSfx);
+        PlayerDash.instance.onDash.AddListener(DashSfx);
         Goal.onGoal.AddListener(VictorySFX);
     }
 

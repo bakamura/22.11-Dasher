@@ -5,7 +5,7 @@ public class LevelVoid : MonoBehaviour {
     private Collider2D _playerCol;
 
     private void Awake() {
-        _playerCol = FindObjectOfType<PlayerDash>().GetComponent<Collider2D>();
+        _playerCol = PlayerDash.instance.GetComponent<Collider2D>();
     }
 
     private void OnTriggerExit2D(Collider2D collision) {

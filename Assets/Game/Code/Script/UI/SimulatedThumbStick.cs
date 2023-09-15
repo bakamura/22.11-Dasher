@@ -13,7 +13,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
     [SerializeField] private float _thumbStickDragMax;
     [SerializeField] private float _thumbStickRecognitionMax;
     [HideInInspector] public UnityEvent<Vector2> onThumbStickHold = new UnityEvent<Vector2>();
-    [HideInInspector] public UnityEvent onThumbStickRelease = new UnityEvent();
+    [HideInInspector] public UnityEvent<Vector2> onThumbStickRelease = new UnityEvent<Vector2>();
     [HideInInspector] public UnityEvent onThumbStickCancel = new UnityEvent();
 
     [Header("Cache")]
@@ -21,6 +21,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
     private Touch _touch;
     private Vector2 _touchDirection;
     private bool _isInRange;
+    private float _screenY;
 
     protected override void Awake() {
         base.Awake();
@@ -32,7 +33,8 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
     private void Start() {
         FindObjectOfType<HUD>().onPause.AddListener(ToggleInput);
         Goal.onGoal.AddListener(HideInput);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(ShowInput);
+        LevelManager.instance.onLevelStart.AddListener(ShowInput);
+        _screenY = Screen.height;
     }
 
     private void Update() {
@@ -49,9 +51,8 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
                 else onThumbStickCancel?.Invoke();
             }
             else if (Input.GetMouseButtonUp(0)) {
-                if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) PlayerDash.instance.Dash(_touchDirection);
+                if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) onThumbStickRelease?.Invoke(_touchDirection);
                 _thumbStickRectTransform.anchoredPosition = Vector2.zero;
-                onThumbStickRelease?.Invoke();
             }
         }
 #endif
@@ -63,15 +64,18 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
             _touchDirection = _touch.position - _thumbStickContainerPos;
             if (IsInRange(_touchDirection.magnitude, _thumbStickDragMin, _thumbStickRecognitionMax)) {
                 if (_touch.phase == TouchPhase.Ended) {
-                    PlayerDash.instance.Dash(_touchDirection); // Subscribe to onThumbStickRelease
-                    _thumbStickRectTransform.anchoredPosition = Vector2.zero;
-                    onThumbStickRelease?.Invoke();
-                } else {
-                    _thumbStickRectTransform.anchoredPosition = _isInRange ? Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax) : Vector2.zero;
+                    onThumbStickRelease?.Invoke(_touchDirection);
+                    _thumbStickRectTransform.anchoredPosition = Vector2.zero; // Create Method and subscribe to event
+                }
+                else {
+                    _thumbStickRectTransform.anchoredPosition = Vector2.ClampMagnitude(_touchDirection, _thumbStickDragMax); // Create Method and subscribe to event
                     onThumbStickHold?.Invoke(_touchDirection);
                 }
-            } 
-            else onThumbStickCancel?.Invoke();
+            }
+            else {
+                _thumbStickRectTransform.anchoredPosition = Vector2.zero; // Create Method and subscribe to event
+                onThumbStickCancel?.Invoke();
+            }
         }
     }
 

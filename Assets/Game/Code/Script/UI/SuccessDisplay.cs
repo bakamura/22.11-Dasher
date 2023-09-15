@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Diagnostics;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +27,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     private void Start() {
         PlayerDash.instance.onDash.AddListener(StartTimer);
         Goal.onGoal.AddListener(ShowDisplay);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(Restart);
+        LevelManager.instance.onLevelStart.AddListener(Restart);
 
         _hud = FindObjectOfType<HUD>();
         _timeScoreDisplay = FindObjectOfType<TimeScoreDisplay>();

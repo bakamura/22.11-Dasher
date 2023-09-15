@@ -20,7 +20,7 @@ public class DashResetter : MonoBehaviour {
 
     private void Start() {
         _respawnWait = new WaitForSeconds(_respawnDelay);
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(ForceRespawn);
+        LevelManager.instance.onLevelStart.AddListener(ForceRespawn);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

@@ -36,14 +36,15 @@ public class PlayerDash : Singleton<PlayerDash> {
     }
 
     private void Start() {
-        FindObjectOfType<LevelManager>().onLevelStart.AddListener(GoToInitialPos);
+        LevelManager.instance.onLevelStart.AddListener(GoToInitialPos);
+        SimulatedThumbStick.instance.onThumbStickRelease.AddListener(Dash);
     }
 
     private void Update() {
         if (CheckGround()) ResetDash();
     }
 
-    public void Dash(Vector2 direction) {
+    private void Dash(Vector2 direction) {
         if (_dashAvailable) {
             _dashAvailable = false;
             StartCoroutine(GroundCheckDelay());

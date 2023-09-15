@@ -9,6 +9,8 @@ public class PlayerAnimation : AnimationHandler {
 
     [Header("Indicators")]
 
+    [SerializeField] private Material _materialDashUp;
+    [SerializeField] private Material _materialCooldown;
     [SerializeField] private Transform _arrowIndicatorTransform;
 
     [Header("Cache")]
@@ -29,11 +31,12 @@ public class PlayerAnimation : AnimationHandler {
     }
 
     private void Start() {
-        PlayerDash dashScript = GetComponent<PlayerDash>();
-        dashScript.onDashReady.AddListener(IdleAnimation);
-        dashScript.onDashReady.AddListener(CanShowArrow);
-        dashScript.onDash.AddListener(DashAnimation);
-        dashScript.onDash.AddListener(CannotShowArrow);
+        PlayerDash.instance.onDashReady.AddListener(IdleAnimation);
+        PlayerDash.instance.onDashReady.AddListener(ShowDashOutline);
+        PlayerDash.instance.onDashReady.AddListener(CanShowArrow);
+        PlayerDash.instance.onDash.AddListener(DashAnimation);
+        PlayerDash.instance.onDash.AddListener(HideDashOutline);
+        PlayerDash.instance.onDash.AddListener(CannotShowArrow);
         SimulatedThumbStick.instance.onThumbStickHold.AddListener(ArrowDirectionUpdate);
         SimulatedThumbStick.instance.onThumbStickRelease.AddListener(HideArrow);
         SimulatedThumbStick.instance.onThumbStickCancel.AddListener(HideArrow);
@@ -47,6 +50,14 @@ public class PlayerAnimation : AnimationHandler {
         }
     }
 
+    private void ShowDashOutline() {
+        _sr.material = _materialDashUp;
+    }
+
+    private void HideDashOutline(Vector2 v2) {
+        _sr.material = _materialCooldown;
+    }
+
     private void ArrowDirectionUpdate(Vector2 direction) {
         if (_canShowArrow) {
             _arrowSr.enabled = true;
@@ -55,6 +66,10 @@ public class PlayerAnimation : AnimationHandler {
     }
 
     private void HideArrow() {
+        _arrowSr.enabled = false;
+    }
+
+    private void HideArrow(Vector2 v2) {
         _arrowSr.enabled = false;
     }
 
