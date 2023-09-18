@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 255208607}
   - component: {fileID: 255208612}
   m_Layer: 3
-  m_Name: PH_DasherPlatform (4)
+  m_Name: Breaking Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,6 @@ GameObject:
   - component: {fileID: 320692798}
   - component: {fileID: 320692797}
   - component: {fileID: 320692796}
-  - component: {fileID: 320692801}
   m_Layer: 3
   m_Name: PH_DasherPlatform (6)
   m_TagString: Untagged
@@ -486,19 +485,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &320692801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320692795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd3351dcfe244b478c2bb58ec858e57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _respawnDelay: 1
 --- !u!1 &560831081
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +500,7 @@ GameObject:
   - component: {fileID: 560831082}
   - component: {fileID: 560831087}
   m_Layer: 3
-  m_Name: PH_DasherPlatform (2)
+  m_Name: Breaking Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,7 +665,7 @@ GameObject:
   - component: {fileID: 564133505}
   - component: {fileID: 564133510}
   m_Layer: 3
-  m_Name: PH_DasherPlatform (5)
+  m_Name: Breaking Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3100,7 +3086,7 @@ GameObject:
   - component: {fileID: 1394827537}
   - component: {fileID: 1394827542}
   m_Layer: 3
-  m_Name: PH_DasherPlatform (1)
+  m_Name: Breaking Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3283,7 +3269,7 @@ GameObject:
   - component: {fileID: 2080887169}
   - component: {fileID: 2080887174}
   m_Layer: 3
-  m_Name: PH_DasherPlatform (3)
+  m_Name: Breaking Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
