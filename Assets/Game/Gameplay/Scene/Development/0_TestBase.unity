@@ -219,7 +219,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -363,7 +363,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiUpSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -545,7 +545,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -701,7 +701,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiUpSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1206,7 +1206,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiUpSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1395,9 +1395,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dashSfx: {fileID: 8300000, guid: a8110bd73092c12409bd57c3acda81ba, type: 3}
-  _dashResetSfx: {fileID: 8300000, guid: 7253b1441d29fe540805748998c40e0e, type: 3}
+  _dashResetSfx: {fileID: 8300000, guid: afa13de160a8d964dbce6139de2d140f, type: 3}
   _dashResetterSfx: {fileID: 8300000, guid: 12936225167457c49b3cb43a42592445, type: 3}
-  _uiClickSfx: {fileID: 8300000, guid: 3b5474514923a0745804e5144775996d, type: 3}
+  _uiUpSfx: {fileID: 8300000, guid: 3b5474514923a0745804e5144775996d, type: 3}
+  _uiDownSfx: {fileID: 8300000, guid: 8058a748e97b1fb4eadec714624a8cde, type: 3}
   _victorySfx: {fileID: 8300000, guid: 6234b4738c8b882479c2bd85e51c946e, type: 3}
 --- !u!1 &608278414
 GameObject:
@@ -1578,7 +1579,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1722,7 +1723,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2005,7 +2006,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2823,7 +2824,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3138,7 +3139,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3655,7 +3656,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiDownSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4174,7 +4175,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 552963856}
         m_TargetAssemblyTypeName: SfxHandler, Assembly-CSharp
-        m_MethodName: UiClickSfx
+        m_MethodName: UiUpSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4275,7 +4276,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5281825087128415422, guid: eda64fe803634334abd22f06d68f5a82, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 87dff5d4502e7954f977857c5eac4f94, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8770f79a1a4eacd45a234a9ed93e1d8a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -23,6 +23,7 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
             int sceneId = i + 1;
             btn[i] = Instantiate(_levelEnterBtnPrefab, _btnParent).GetComponent<Button>();
             btn[i].onClick.AddListener(() => LevelManager.instance.GoToScene(sceneId)); // Because it's not possible to change parameters in an already present action
+            btn[i].onClick.AddListener(() => SfxHandler.instance.UiUpSfx()); // Also
             btn[i].GetComponentInChildren<TextMeshProUGUI>().text = (sceneId).ToString();
             if (i > 0) btn[i].interactable = SaveSystem.instance.progress.levelCleared[i - 1]; // 
 

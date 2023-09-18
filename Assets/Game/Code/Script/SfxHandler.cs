@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class SfxHandler : MonoBehaviour {
+public class SfxHandler : Singleton<SfxHandler> {
 
     [Header("SFX List")]
 
     [SerializeField] private AudioClip _dashSfx;
     [SerializeField] private AudioClip _dashResetSfx;
     [SerializeField] private AudioClip _dashResetterSfx;
-    [SerializeField] private AudioClip _uiClickSfx;
+    [SerializeField] private AudioClip _uiUpSfx;
+    [SerializeField] private AudioClip _uiDownSfx;
     [SerializeField] private AudioClip _victorySfx;
 
     [Header("Cache")]
 
     private AudioSource _as;
 
-    private void Awake() {
+    protected override void Awake() {
+        base.Awake();
+
         _as = GetComponent<AudioSource>();
     }
 
@@ -24,6 +27,7 @@ public class SfxHandler : MonoBehaviour {
         Goal.onGoal.AddListener(VictorySFX);
     }
 
+    // Public?
     public void PlaySfx(AudioClip sfx) {
         _as.PlayOneShot(sfx);
     }
@@ -36,8 +40,12 @@ public class SfxHandler : MonoBehaviour {
         PlaySfx(_dashResetSfx);
     }
 
-    public void UiClickSfx() {
-        PlaySfx(_uiClickSfx);
+    public void UiUpSfx() {
+        PlaySfx(_uiUpSfx);
+    }
+
+    public void UiDownSfx() {
+        PlaySfx(_uiDownSfx);
     }
 
     private void VictorySFX() {

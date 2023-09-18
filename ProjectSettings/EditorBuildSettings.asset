@@ -9,50 +9,50 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Development/0_TestBase.unity
     guid: 0ccc482ba18be3042b2830a53c46fb92
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/1_TestLevel0.unity
+    path: Assets/Game/Gameplay/Scene/Development/1_TestLevel.unity
     guid: de963323cc097f243a8c2014a93f1fc2
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/2_TestLevel1.unity
+    path: Assets/Game/Gameplay/Scene/Development/2_TestLevel.unity
     guid: b50615fd956494c4e91495cae26c773a
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/3_TestLevel2.unity
+    path: Assets/Game/Gameplay/Scene/Development/3_TestLevel.unity
     guid: 03e60f69b932ccd4ab57c2fbc2f892e3
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/4_TestLevel3.unity
+    path: Assets/Game/Gameplay/Scene/Development/4_TestLevel.unity
     guid: 535d8cdd5506ae240baa4dc598ef8e2f
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/5_TestLevel4.unity
+    path: Assets/Game/Gameplay/Scene/Development/5_TestLevel.unity
     guid: afe301106fd3d9a42b6e6d70cad3da4f
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/6_TestLevel5.unity
+    path: Assets/Game/Gameplay/Scene/Development/6_TestLevel.unity
     guid: d78347bae9afc9a408d0494a4cca7c32
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/7_TestLevel6.unity
+    path: Assets/Game/Gameplay/Scene/Development/7_TestLevel.unity
     guid: 2b5ba9e06a639ae45871181610f7b21e
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/8_TestLevel7.unity
+    path: Assets/Game/Gameplay/Scene/Development/8_TestLevel.unity
     guid: 47dd4dabd1e38c540b2d37a2661072d6
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/9_TestLevel8.unity
+    path: Assets/Game/Gameplay/Scene/Development/9_TestLevel.unity
     guid: 5bd24f642e3bc1d43bc43377aadeb653
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/10_TestLevel9.unity
+    path: Assets/Game/Gameplay/Scene/Development/10_TestLevel.unity
     guid: 1344e0f494929b64daffb6afa26ed074
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/11_TestLevel10.unity
+    path: Assets/Game/Gameplay/Scene/Development/11_TestLevel.unity
     guid: e891ee68ca0edd149810cb4ba33d9a70
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/12_TestLevel11.unity
-    guid: 62de9df077e1ae94c95e136adf5600ce
+    path: Assets/Game/Gameplay/Scene/Development/12_TestLevel.unity
+    guid: 4a9c79e80edc64b45b2743f4959b83be
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/13_TestLevel12.unity
-    guid: 3a40b7c1db036914d9f711dff19ca2a2
-  - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/14_TestLevel13.unity
+    path: Assets/Game/Gameplay/Scene/Development/13_TestLevel.unity
     guid: 3434b5e45c56c3d4b98c2bb7afc5c409
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/15_TestLevel14.unity
-    guid: 4a9c79e80edc64b45b2743f4959b83be
+    path: Assets/Game/Gameplay/Scene/Development/14_TestLevel.unity
+    guid: 62de9df077e1ae94c95e136adf5600ce
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/15_TestLevel.unity
+    guid: 3a40b7c1db036914d9f711dff19ca2a2
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/LoopFixer.unity
     guid: b368aca77e8eef54ba4ff3dce58338b0

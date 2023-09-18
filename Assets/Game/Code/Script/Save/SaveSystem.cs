@@ -46,7 +46,6 @@ public class SaveSystem : Singleton<SaveSystem> {
         if (File.Exists(progressPath)) {
             streamCurrent = File.Open(progressPath, FileMode.Open);
             progress = (SaveProgress)formatter.Deserialize(streamCurrent);
-            // Update somehow if number of levels has changed (because of app update)
             streamCurrent.Close();
         }
         else {
@@ -80,9 +79,10 @@ public class SaveSystem : Singleton<SaveSystem> {
 
     public void SaveErase() {
         if (File.Exists(progressPath)) File.Delete(progressPath);
-        progress = new SaveProgress(SceneManager.sceneCountInBuildSettings - 1);
-        
-        SaveUpdate(SaveType.Progress);
+        Application.Quit();
+
+        //progress = new SaveProgress(SceneManager.sceneCountInBuildSettings - 1);
+        //SaveUpdate(SaveType.Progress);
     }
 
     public void CompleteLevel(TimeSpan time) {
