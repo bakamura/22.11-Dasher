@@ -17,7 +17,6 @@ public class PlatformSwitching : MonoBehaviour {
     }
 
     private void Start() {
-        Switch(Vector2.zero);
         PlayerDash.instance.onDash.AddListener(Switch);
     }
 
