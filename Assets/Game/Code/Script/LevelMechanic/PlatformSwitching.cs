@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformSwitching : MonoBehaviour {
@@ -7,20 +5,35 @@ public class PlatformSwitching : MonoBehaviour {
     [Header("Parameters")]
 
     [SerializeField] private bool _switchState;
-    [SerializeField] private Sprite[] _spriteSwitch;
 
-    private void Switch() {
+    [Header("Cache")]
+
+    private PlatformSwitchingAnimation _animationHandler;
+    private Collider2D _col;
+
+    private void Awake() {
+        _animationHandler = GetComponent<PlatformSwitchingAnimation>();
+        _col = GetComponent<Collider2D>();
+    }
+
+    private void Start() {
+        Switch(Vector2.zero);
+        PlayerDash.instance.onDash.AddListener(Switch);
+    }
+
+    private void Switch(Vector2 v2) {
         _switchState = !_switchState;
-
+        _col.enabled = _switchState;
+        _animationHandler.SwitchAnimation(_switchState);
     }
 
 #if UNITY_EDITOR
-    private bool _switchStatePrevious;
     private void OnValidate() {
-        if (_switchStatePrevious != _switchState) {
-            _switchStatePrevious = _switchState;
-            Switch();
-        }
+        _col = GetComponent<Collider2D>();
+        _col.enabled = _switchState;
+        _animationHandler = GetComponent<PlatformSwitchingAnimation>();
+        _animationHandler.SwitchAnimation(_switchState);
     }
 #endif
-    }
+
+}

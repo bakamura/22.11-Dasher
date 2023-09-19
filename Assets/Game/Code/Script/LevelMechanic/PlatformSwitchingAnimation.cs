@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+public class PlatformSwitchingAnimation : AnimationHandler {
 
-public class PlatformSwitchingAnimation : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private const string SWITCH_ON = "PlatformSwitchOn";
+    private const string SWITCH_OFF = "PlatformSwitchOff";
+
+    public void SwitchAnimation(bool switchState) {
+        ChangeAnimation(switchState ? SWITCH_ON : SWITCH_OFF);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
