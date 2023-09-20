@@ -232,16 +232,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518156, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: _switchState
+      propertyPath: _startState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518157, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
       propertyPath: m_Name
       value: SwitchingPlatform (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887294974074518159, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
@@ -411,16 +407,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518156, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: _switchState
+      propertyPath: _startState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518157, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
       propertyPath: m_Name
       value: SwitchingPlatform (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887294974074518159, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
@@ -473,6 +465,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518146, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887294974074518156, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
+      propertyPath: _startState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518157, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
@@ -589,17 +585,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1887294974074518156, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: _switchState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518157, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
       propertyPath: m_Name
       value: SwitchingPlatform (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887294974074518159, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
@@ -712,16 +700,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518156, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: _switchState
+      propertyPath: _startState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887294974074518157, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
       propertyPath: m_Name
       value: SwitchingPlatform (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887294974074518159, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbfbe8c05caa3bf468677d5159ffa4d4, type: 3}

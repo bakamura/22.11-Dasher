@@ -58,6 +58,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
 
             _successDisplayRectTransform.anchoredPosition = Vector2.Lerp(_successDisplayInitialPos, _successDisplayFinalPos, LogarithmicLerp(animation));
         }
+        Time.timeScale = 0; // Could cause problems
     }
 
     private float LogarithmicLerp(float value) {

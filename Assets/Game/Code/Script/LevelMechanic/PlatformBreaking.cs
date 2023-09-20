@@ -28,6 +28,7 @@ public class PlatformBreaking : MonoBehaviour {
         if (_playerCol == null) _playerCol = PlayerDash.instance.GetComponent<Collider2D>();
         _playerRb = _playerCol.GetComponent<Rigidbody2D>(); //
         _breakWait = new WaitForSeconds(_animationHandler.BreakAnimationDuration());
+        LevelManager.instance.onLevelStart.AddListener(ForceRespawn);
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
@@ -53,4 +54,12 @@ public class PlatformBreaking : MonoBehaviour {
         _col.enabled = true;
         _breaking = false;
     }
+
+    private void ForceRespawn() {
+        StopAllCoroutines();
+        _animationHandler.RespawnAnimation();
+        _col.enabled = true;
+        _breaking = false;
+    }
+
 }
