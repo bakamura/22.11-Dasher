@@ -34,10 +34,14 @@ public class PlatformSwitching : MonoBehaviour {
     }
 
 #if UNITY_EDITOR
+    [Header("Visualizing")]
+
+    [Tooltip("0 = Active, 1 = Inactive")]
+    [SerializeField] private Sprite[] _sprites;
+
     private void OnValidate() {
-        // GetComponent<SpriteRenderer>().sprite;
-        _switchState = _startState;
-        GetComponent<PlatformSwitchingAnimation>().SwitchAnimation(_switchState);
+        GetComponent<SpriteRenderer>().sprite = _sprites[_startState ? 0 : 1];
+        GetComponent<Collider2D>().enabled = _startState;
     }
 #endif
 

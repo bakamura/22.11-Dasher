@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlatformSwitchOff
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 3512323443020932079, guid: 6675e5454c72a3b4c98dff0174d516c9, type: 3}
+  - {fileID: 1822870864300051901, guid: 88e46adc132c28042a1268e67d9d74e3, type: 3}
   speed: 1
   loop: 0
