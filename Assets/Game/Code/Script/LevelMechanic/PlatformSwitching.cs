@@ -20,7 +20,7 @@ public class PlatformSwitching : MonoBehaviour {
     private void Start() {
         if (!_startState) SwitchState(Vector2.zero);
         PlayerDash.instance.onDash.AddListener(SwitchState);
-        LevelManager.instance.onLevelEnter.AddListener(Restart);
+        LevelManager.instance.onLevelStart.AddListener(Restart);
     }
 
     private void SwitchState(Vector2 v2) {
@@ -40,8 +40,10 @@ public class PlatformSwitching : MonoBehaviour {
     [SerializeField] private Sprite[] _sprites;
 
     private void OnValidate() {
-        GetComponent<SpriteRenderer>().sprite = _sprites[_startState ? 0 : 1];
-        GetComponent<Collider2D>().enabled = _startState;
+        if (!Application.isPlaying) {
+            GetComponent<SpriteRenderer>().sprite = _sprites[_startState ? 0 : 1];
+            GetComponent<Collider2D>().enabled = _startState;
+        }
     }
 #endif
 

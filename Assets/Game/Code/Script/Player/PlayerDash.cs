@@ -9,6 +9,7 @@ public class PlayerDash : Singleton<PlayerDash> {
     [SerializeField] private float _dashVelocity;
     private bool _dashAvailable = false;
     [HideInInspector] public UnityEvent<Vector2> onDash = new UnityEvent<Vector2>();
+    [HideInInspector] public UnityEvent onLand = new UnityEvent();
     [HideInInspector] public UnityEvent onDashReady = new UnityEvent();
 
     [Header("Check Ground")]
@@ -25,13 +26,14 @@ public class PlayerDash : Singleton<PlayerDash> {
 
     [Header("Cache")]
 
-    private Rigidbody2D _rb;
+    [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Collider2D col;
+    private bool _groundedWas;
 
     protected override void Awake() {
         base.Awake();
 
-        _rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
     }
 
@@ -41,7 +43,12 @@ public class PlayerDash : Singleton<PlayerDash> {
     }
 
     private void Update() {
-        if (CheckGround()) ResetDash();
+        bool grounded = CheckGround();
+        if (grounded && !_groundedWas) {
+            ResetDash();
+            if(rb.velocity.y < 0.05f) onLand.Invoke();
+        }
+        _groundedWas = grounded;
     }
 
     private void Dash(Vector2 direction) {
@@ -50,7 +57,7 @@ public class PlayerDash : Singleton<PlayerDash> {
             StartCoroutine(GroundCheckDelay());
 
             direction = direction.normalized;
-            _rb.velocity = direction * _dashVelocity;
+            rb.velocity = direction * _dashVelocity;
             onDash.Invoke(direction);
         }
     }
@@ -83,7 +90,7 @@ public class PlayerDash : Singleton<PlayerDash> {
 
     private void GoToInitialPos() {
         transform.position = initialPos;
-        _rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
     }
 
 #if UNITY_EDITOR

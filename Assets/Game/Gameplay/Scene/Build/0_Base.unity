@@ -1395,11 +1395,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dashSfx: {fileID: 8300000, guid: a8110bd73092c12409bd57c3acda81ba, type: 3}
+  _landSfx: {fileID: 8300000, guid: 1e84e2d7db76ba24680d0c96b204e7bf, type: 3}
   _dashResetSfx: {fileID: 8300000, guid: afa13de160a8d964dbce6139de2d140f, type: 3}
-  _dashResetterSfx: {fileID: 8300000, guid: 12936225167457c49b3cb43a42592445, type: 3}
   _uiUpSfx: {fileID: 8300000, guid: 3b5474514923a0745804e5144775996d, type: 3}
   _uiDownSfx: {fileID: 8300000, guid: 8058a748e97b1fb4eadec714624a8cde, type: 3}
   _victorySfx: {fileID: 8300000, guid: 6234b4738c8b882479c2bd85e51c946e, type: 3}
+  _dashResetterSfx: {fileID: 8300000, guid: 12936225167457c49b3cb43a42592445, type: 3}
 --- !u!1 &608278414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2445,9 @@ MonoBehaviour:
   onDash:
     m_PersistentCalls:
       m_Calls: []
+  onLand:
+    m_PersistentCalls:
+      m_Calls: []
   onDashReady:
     m_PersistentCalls:
       m_Calls: []
@@ -2454,6 +2458,7 @@ MonoBehaviour:
     m_Bits: 8
   _groundCheckDelay: 0.4
   initialPos: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
   col: {fileID: 0}
 --- !u!114 &947752619
 MonoBehaviour:
@@ -4245,6 +4250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117802965}
   - component: {fileID: 2117802966}
+  - component: {fileID: 2117802967}
   m_Layer: 0
   m_Name: MusicSource
   m_TagString: Untagged
@@ -4276,11 +4282,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5281825087128415422, guid: eda64fe803634334abd22f06d68f5a82, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b5b75fbb65a6d4a4194ca40ea2fa9b68, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 705511ee1149b1b41ac6d50bdc40624f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4362,3 +4368,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2117802967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117802964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0223215c446dc4287a085db7e77235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startTime: 4.898
