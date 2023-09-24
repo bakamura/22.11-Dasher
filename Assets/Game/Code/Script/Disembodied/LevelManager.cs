@@ -40,6 +40,7 @@ public class LevelManager : Singleton<LevelManager> {
     private IEnumerator GoToSceneRoutine(int sceneId) {
         //_hud.PauseBtn(false);
         Time.timeScale = 1;
+        onLevelLoading?.Invoke();
         _hud.ShowPauseBtn();
 
         _transitionAnimationHandler.TransitionStartAnimation();
@@ -75,6 +76,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     private IEnumerator RetryRoutine() {
         Time.timeScale = 1;
+        onLevelLoading?.Invoke();
         _transitionAnimationHandler.TransitionStartAnimation();
 
         yield return _transitionStartWait;

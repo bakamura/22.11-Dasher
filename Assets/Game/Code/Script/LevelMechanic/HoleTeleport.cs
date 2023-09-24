@@ -12,12 +12,12 @@ public class HoleTeleport : MonoBehaviour {
 
     [Header("Cache")]
 
-    private Vector2 _v2C;
+    //private Vector2 _v2C;
     private float _sinC;
     private float _cosC;
 
     private void Start() {
-        float holeConnectedAngle = (transform.rotation.z - _holeConnected.transform.rotation.z) * Mathf.Deg2Rad;
+        float holeConnectedAngle = (180 + transform.eulerAngles.z - _holeConnected.transform.eulerAngles.z) * Mathf.Deg2Rad;
         _sinC = Mathf.Sin(holeConnectedAngle);
         _cosC = Mathf.Cos(holeConnectedAngle);
     }
@@ -38,11 +38,15 @@ public class HoleTeleport : MonoBehaviour {
         PlayerDash.instance.transform.position = _holeConnected.transform.position;
 
         // Angle
-        _v2C[0] = PlayerDash.instance.rb.velocity.x * _cosC - PlayerDash.instance.rb.velocity.y * _sinC;
-        _v2C[1] = PlayerDash.instance.rb.velocity.x * _sinC + PlayerDash.instance.rb.velocity.y * _cosC;
-
-        print($"Player Velocity: {PlayerDash.instance.rb.velocity}\n New Direction {_v2C.normalized * PlayerDash.instance.rb.velocity.magnitude}");
-        PlayerDash.instance.rb.velocity = _v2C.normalized * PlayerDash.instance.rb.velocity.magnitude;
+        Debug.Log($"Vel Before: {PlayerDash.instance.rb.velocity}");
+        // Set not working?
+        //PlayerDash.instance.rb.velocity.Set(PlayerDash.instance.rb.velocity.x * _cosC - PlayerDash.instance.rb.velocity.y * _sinC,
+        //PlayerDash.instance.rb.velocity.x * _sinC + PlayerDash.instance.rb.velocity.y * _cosC);
+        PlayerDash.instance.rb.velocity = new Vector2(PlayerDash.instance.rb.velocity.x * _cosC - PlayerDash.instance.rb.velocity.y * _sinC,
+        PlayerDash.instance.rb.velocity.x * _sinC + PlayerDash.instance.rb.velocity.y * _cosC);
+        Debug.Log($"Vel After: {PlayerDash.instance.rb.velocity}");
+        //_v2C[0] = PlayerDash.instance.rb.velocity.x * _cosC - PlayerDash.instance.rb.velocity.y * _sinC;
+        //_v2C[1] = PlayerDash.instance.rb.velocity.x * _sinC + PlayerDash.instance.rb.velocity.y * _cosC;
     }
 
 }

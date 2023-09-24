@@ -28,6 +28,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
     private void Start() {
         PlayerDash.instance.onDash.AddListener(StartTimer);
         Goal.onGoal.AddListener(ShowDisplay);
+        LevelManager.instance.onLevelLoading.AddListener(OtherSceneLoaded);
         LevelManager.instance.onLevelStart.AddListener(Restart);
 
         _hud = FindObjectOfType<HUD>();
