@@ -1,7 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DashResetter : MonoBehaviour {
+
+    [HideInInspector] public static UnityEvent onResetDash = new UnityEvent();
 
     [Header("Parameters")]
 
@@ -25,6 +28,7 @@ public class DashResetter : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision == PlayerDash.instance.col) {
+            onResetDash.Invoke();
             PlayerDash.instance.ResetDash();
             StartCoroutine(Respawn());
         }

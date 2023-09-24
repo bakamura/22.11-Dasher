@@ -1,7 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlatformBreaking : MonoBehaviour {
+    
+    [HideInInspector] public static UnityEvent onBreakingStart = new UnityEvent();
+    [HideInInspector] public static UnityEvent onBreaking = new UnityEvent();
 
     [Header("Parameters")]
 
@@ -42,11 +46,13 @@ public class PlatformBreaking : MonoBehaviour {
     private IEnumerator BreakRespawn() {
         _breaking = true;
         _animationHandler.BreakAnimation();
+        onBreakingStart?.Invoke();
 
         yield return _breakWait;
 
         _animationHandler.NullAnimation();
         _col.enabled = false;
+        onBreaking?.Invoke();
 
         yield return _respawnWait;
 

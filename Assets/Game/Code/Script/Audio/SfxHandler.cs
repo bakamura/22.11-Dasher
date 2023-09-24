@@ -17,6 +17,7 @@ public class SfxHandler : Singleton<SfxHandler> {
     [Header("Level Mechanic SFX List")]
 
     [SerializeField] private AudioClip _dashResetterSfx;
+    [SerializeField] private AudioClip _platformBreakingStartSfx;
     [SerializeField] private AudioClip _platformBreakingSfx;
     [SerializeField] private AudioClip _platformSwitchingSfx;
     [SerializeField] private AudioClip _holeteleportSfx;
@@ -37,6 +38,12 @@ public class SfxHandler : Singleton<SfxHandler> {
         PlayerDash.instance.onDashReady.AddListener(DashResetSfx);
 
         Goal.onGoal.AddListener(VictorySFX);
+
+        DashResetter.onResetDash.AddListener(DashResetterSfx);
+        PlatformBreaking.onBreakingStart.AddListener(PlatformBreakingStartSfx);
+        PlatformBreaking.onBreaking.AddListener(PlatformBreakingSfx);
+        PlatformSwitching.onSwitch.AddListener(PlatformSwitchingSfx);
+        HoleTeleport.onTeleport.AddListener(HoleTeleportSfx);
     }
 
     // Public?
@@ -76,6 +83,10 @@ public class SfxHandler : Singleton<SfxHandler> {
 
     private void DashResetterSfx() {
         PlaySfx(_dashResetterSfx);
+    }
+
+    private void PlatformBreakingStartSfx() {
+        PlaySfx(_platformBreakingStartSfx);
     }
 
     private void PlatformBreakingSfx() {

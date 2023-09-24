@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlatformRespawn
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: d2c85b54ebea6d943bc1860cc2c7137d, type: 3}
-  - {fileID: 21300000, guid: d2c85b54ebea6d943bc1860cc2c7137d, type: 3}
+  - {fileID: -647572823799037366, guid: 9776e0e977e51dd4fb0df8ec512f912b, type: 3}
+  - {fileID: 6382670982037321221, guid: 9776e0e977e51dd4fb0df8ec512f912b, type: 3}
   speed: 4
   loop: 0

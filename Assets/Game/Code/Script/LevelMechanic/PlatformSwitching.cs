@@ -1,6 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlatformSwitching : MonoBehaviour {
+
+    [HideInInspector] public static UnityEvent onSwitch = new UnityEvent(); 
 
     [Header("Parameters")]
 
@@ -11,6 +14,7 @@ public class PlatformSwitching : MonoBehaviour {
 
     private PlatformSwitchingAnimation _animationHandler;
     private Collider2D _col;
+    private bool _switchThisFrame = false;
 
     private void Awake() {
         _animationHandler = GetComponent<PlatformSwitchingAnimation>();
@@ -23,10 +27,18 @@ public class PlatformSwitching : MonoBehaviour {
         LevelManager.instance.onLevelStart.AddListener(Restart);
     }
 
+    private void Update() {
+        _switchThisFrame = false;
+    }
+
     private void SwitchState(Vector2 v2) {
         _switchState = !_switchState;
         _col.enabled = _switchState;
         _animationHandler.SwitchAnimation(_switchState);
+        if (!_switchThisFrame) {
+            onSwitch.Invoke();
+            _switchThisFrame = true;
+        }
     }
 
     private void Restart() {

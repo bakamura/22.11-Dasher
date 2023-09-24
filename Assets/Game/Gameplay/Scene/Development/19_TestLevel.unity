@@ -548,28 +548,34 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1456653085}
     m_ColliderPaths:
-    - - X: -10000100
-        Y: 8749959
-      - X: -10000100
+    - - X: -30000100
         Y: 10000041
-      - X: -10000041
+      - X: -30000100
+        Y: 9062459
+      - X: -30000041
+        Y: 9062400
+      - X: -19999959
+        Y: 9062400
+      - X: -19999900
+        Y: 9062459
+      - X: -19999900
+        Y: 9062400
+      - X: -9999959
+        Y: 9062400
+      - X: -9999900
+        Y: 9062459
+      - X: -9999900
+        Y: 10000041
+      - X: -9999959
         Y: 10000100
       - X: -30000041
         Y: 10000100
-      - X: -30000100
-        Y: 10000041
-      - X: -30000100
-        Y: 8749959
-      - X: -30000041
-        Y: 8749900
-      - X: -10000041
-        Y: 8749900
   m_CompositePaths:
     m_Paths:
-    - - {x: -1.0000334, y: 0.87499}
-      - {x: -1.0000334, y: 1.00001}
+    - - {x: -1.0000193, y: 0.9062459}
+      - {x: -1.0000252, y: 1.00001}
       - {x: -3.00001, y: 0.9999748}
-      - {x: -2.9999747, y: 0.87499}
+      - {x: -2.999981, y: 0.9062459}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!19719996 &1456653085
@@ -648,7 +654,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -669,8 +675,8 @@ Tilemap:
   - first: {x: -3, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -679,8 +685,8 @@ Tilemap:
   - first: {x: -2, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -698,10 +704,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 1c7482898525c80499e167c71f8f1007, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: bbfd1890142db28479ee325abd9834ba, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -713,10 +719,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 2362129449756843987, guid: 9776e0e977e51dd4fb0df8ec512f912b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: d2c85b54ebea6d943bc1860cc2c7137d, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 2
     m_Data:

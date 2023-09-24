@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HoleTeleport : MonoBehaviour {
+
+    [HideInInspector] public static UnityEvent onTeleport = new UnityEvent();
 
     [Header("Properties")]
 
@@ -30,6 +31,8 @@ public class HoleTeleport : MonoBehaviour {
     }
 
     private void Teleport() {
+        onTeleport.Invoke();
+
         // Position
         _holeConnected.canTeleport = false;
         PlayerDash.instance.transform.position = _holeConnected.transform.position;
@@ -38,6 +41,7 @@ public class HoleTeleport : MonoBehaviour {
         _v2C[0] = PlayerDash.instance.rb.velocity.x * _cosC - PlayerDash.instance.rb.velocity.y * _sinC;
         _v2C[1] = PlayerDash.instance.rb.velocity.x * _sinC + PlayerDash.instance.rb.velocity.y * _cosC;
 
+        print($"Player Velocity: {PlayerDash.instance.rb.velocity}\n New Direction {_v2C.normalized * PlayerDash.instance.rb.velocity.magnitude}");
         PlayerDash.instance.rb.velocity = _v2C.normalized * PlayerDash.instance.rb.velocity.magnitude;
     }
 

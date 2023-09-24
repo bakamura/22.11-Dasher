@@ -7,6 +7,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     [Header("Parameters")]
 
+    [HideInInspector] public UnityEvent onLevelLoading = new UnityEvent(); // Needed only if PlayerInitialPos setter will use it
     [HideInInspector] public UnityEvent onLevelEnter = new UnityEvent(); // Needed only if PlayerInitialPos setter will use it
     [HideInInspector] public UnityEvent onLevelStart = new UnityEvent();
     [SerializeField] private int _retryUntilAd;

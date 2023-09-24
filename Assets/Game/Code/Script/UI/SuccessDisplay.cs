@@ -23,6 +23,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
 
     private HUD _hud;
     private TimeScoreDisplay _timeScoreDisplay;
+    private bool _shouldPause;
 
     private void Start() {
         PlayerDash.instance.onDash.AddListener(StartTimer);
@@ -41,8 +42,10 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
         TimeSpan span = TimeSpan.FromSeconds(Time.timeSinceLevelLoad - _timeAtStart);
         _timeTakenText.text = _textBeforeTime + span.ToString(@"m\:ss\.fff"); // Check what happens if more than 10mins
 
-        if(SaveSystem.instance.progress.levelCurrent < SceneManager.sceneCountInBuildSettings - 1) _hud._levelSelectBtn[SaveSystem.instance.progress.levelCurrent].interactable = true; // Update buttons, has to happen BEFORE SaveSystem.ComleteLevel
-        if(SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1] == TimeSpan.Zero || span < SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1]) 
+        _shouldPause = true;
+
+        if (SaveSystem.instance.progress.levelCurrent < SceneManager.sceneCountInBuildSettings - 1) _hud._levelSelectBtn[SaveSystem.instance.progress.levelCurrent].interactable = true; // Update buttons, has to happen BEFORE SaveSystem.ComleteLevel
+        if (SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1] == TimeSpan.Zero || span < SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1])
             _timeScoreDisplay.ScoreTextUpdate(SaveSystem.instance.progress.levelCurrent - 1, span);
         SaveSystem.instance.CompleteLevel(span);
         _successDisplayRectTransform.anchoredPosition = _successDisplayInitialPos;
@@ -58,11 +61,16 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
 
             _successDisplayRectTransform.anchoredPosition = Vector2.Lerp(_successDisplayInitialPos, _successDisplayFinalPos, LogarithmicLerp(animation));
         }
-        Time.timeScale = 0; // Could cause problems
+        if (_shouldPause) Time.timeScale = 0; // Could cause problems
     }
+
 
     private float LogarithmicLerp(float value) {
         return 1f - Mathf.Pow(1 - value, 2f);
+    }
+
+    private void OtherSceneLoaded() {
+        _shouldPause = false;
     }
 
     private void StartTimer(Vector2 v2) {

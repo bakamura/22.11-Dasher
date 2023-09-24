@@ -1401,6 +1401,10 @@ MonoBehaviour:
   _uiDownSfx: {fileID: 8300000, guid: 8058a748e97b1fb4eadec714624a8cde, type: 3}
   _victorySfx: {fileID: 8300000, guid: 6234b4738c8b882479c2bd85e51c946e, type: 3}
   _dashResetterSfx: {fileID: 8300000, guid: 12936225167457c49b3cb43a42592445, type: 3}
+  _platformBreakingStartSfx: {fileID: 8300000, guid: 14ed882067fc9324cb8c82ccc409bee1, type: 3}
+  _platformBreakingSfx: {fileID: 8300000, guid: a863a490b2bfe7d4f9f6d004f063b2ea, type: 3}
+  _platformSwitchingSfx: {fileID: 8300000, guid: fb7904bce2a8ce445b1f9e41961968ed, type: 3}
+  _holeteleportSfx: {fileID: 8300000, guid: ab391bfd86965e2489bd411fe0253d06, type: 3}
 --- !u!1 &608278414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,6 +2565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3ff15747a4108459db9dcefa89d41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onLevelLoading:
+    m_PersistentCalls:
+      m_Calls: []
   onLevelEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -3551,6 +3558,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelEnterBtnPrefab: {fileID: 960475022504096484, guid: b6bb9225cf7081c40a79e2b7991edbcf, type: 3}
   _btnParent: {fileID: 448788600}
+  _textSizePerDigit:
+  - 126
+  - 88
+  - 72
 --- !u!114 &1869234580
 MonoBehaviour:
   m_ObjectHideFlags: 0

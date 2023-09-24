@@ -9,6 +9,7 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
 
     [SerializeField] private GameObject _levelEnterBtnPrefab;
     [SerializeField] private RectTransform _btnParent;
+    [SerializeField] private float[] _textSizePerDigit = new float[3];
 
     private void Start() {
         FindObjectOfType<HUD>()._levelSelectBtn = InstantiateButtons();
@@ -19,12 +20,15 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
         Button[] btn = new Button[SceneManager.sceneCountInBuildSettings - 1];
         GridLayoutGroup gridLayout = _btnParent.GetComponent<GridLayoutGroup>();
         Vector2 sizeParent = _btnParent.sizeDelta;
+        TextMeshProUGUI tmpUgui;
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings - 1; i++) {
             int sceneId = i + 1;
             btn[i] = Instantiate(_levelEnterBtnPrefab, _btnParent).GetComponent<Button>();
             btn[i].onClick.AddListener(() => LevelManager.instance.GoToScene(sceneId)); // Because it's not possible to change parameters in an already present action
             btn[i].onClick.AddListener(() => SfxHandler.instance.UiUpSfx()); // Also
-            btn[i].GetComponentInChildren<TextMeshProUGUI>().text = (sceneId).ToString();
+            tmpUgui = btn[i].GetComponentInChildren<TextMeshProUGUI>();
+            tmpUgui.text = (sceneId).ToString();
+            tmpUgui.fontSize = _textSizePerDigit[Mathf.FloorToInt(Mathf.Log10(sceneId))];
             if (i > 0) btn[i].interactable = SaveSystem.instance.progress.levelCleared[i - 1]; // 
 
             else sizeParent[1] = 0;
