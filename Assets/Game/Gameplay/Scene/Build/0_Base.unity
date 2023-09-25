@@ -2360,7 +2360,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3866191921110494400, guid: b81ae5c43dd99654a815f0712cace800, type: 3}
+  m_Sprite: {fileID: -6046633350604926885, guid: c4586a96d8a729e4882daaaa5d848a8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2420,7 +2420,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.025}
+  m_Offset: {x: 0, y: 0.025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   onDashReady:
     m_PersistentCalls:
       m_Calls: []
-  _groundCheckPos: {x: 0, y: -0.525}
+  _groundCheckPos: {x: 0, y: -0.475}
   _groundCheckBox: {x: 0.75, y: 0.05}
   _groundLayer:
     serializedVersion: 2

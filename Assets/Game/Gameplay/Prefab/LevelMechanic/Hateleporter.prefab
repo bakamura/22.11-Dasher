@@ -112,5 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4755beea4fc1ef1458f59fe0907fa57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _angleAdded: 270
   _holeConnected: {fileID: 0}
   canTeleport: 1

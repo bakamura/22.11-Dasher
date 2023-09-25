@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: b81ae5c43dd99654a815f0712cace800
+guid: c4586a96d8a729e4882daaaa5d848a8e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3866191921110494400
-    second: PH_DasherAnimationStarts_0
+      213: -6046633350604926885
+    second: PH_DasherAnimation_0
   - first:
-      213: 7904767933864281019
-    second: PH_DasherAnimationStarts_1
+      213: 4433355112519737982
+    second: PH_DasherAnimation_1
   - first:
-      213: -5428541742826164604
-    second: PH_DasherAnimationStarts_2
+      213: 4202637919707695535
+    second: PH_DasherAnimation_2
+  - first:
+      213: -5609297987788605939
+    second: PH_DasherAnimation_3
+  - first:
+      213: 6535835221069092582
+    second: PH_DasherAnimation_4
+  - first:
+      213: 6975028708420897397
+    second: PH_DasherAnimation_5
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,18 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -125,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PH_DasherAnimationStarts_0
+      name: PH_DasherAnimation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04359b48ee6885ac0800000000000000
-      internalID: -3866191921110494400
+      spriteID: b50d92a010b061ca0800000000000000
+      internalID: -6046633350604926885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherAnimationStarts_1
+      name: PH_DasherAnimation_1
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb301e9fd8063bd60800000000000000
-      internalID: 7904767933864281019
+      spriteID: e72a6e46cf0768d30800000000000000
+      internalID: 4433355112519737982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PH_DasherAnimationStarts_2
+      name: PH_DasherAnimation_2
       rect:
         serializedVersion: 2
         x: 64
@@ -181,8 +178,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48e677aeb02f9a4b0800000000000000
-      internalID: -5428541742826164604
+      spriteID: fa983c3ebe4c25a30800000000000000
+      internalID: 4202637919707695535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PH_DasherAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06fb8e0335c722b0800000000000000
+      internalID: -5609297987788605939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PH_DasherAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e65f465183f3ba50800000000000000
+      internalID: 6535835221069092582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PH_DasherAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a449fa7a74cc060800000000000000
+      internalID: 6975028708420897397
       vertices: []
       indices: 
       edges: []

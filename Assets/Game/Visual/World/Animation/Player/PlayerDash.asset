@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerDash
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 7904767933864281019, guid: b81ae5c43dd99654a815f0712cace800, type: 3}
+  - {fileID: -5609297987788605939, guid: c4586a96d8a729e4882daaaa5d848a8e, type: 3}
   speed: 1
   loop: 0
