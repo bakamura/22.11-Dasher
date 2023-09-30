@@ -79,6 +79,9 @@ EditorBuildSettings:
     guid: ccc6bf35f7efaf34bbe2fe747da25633
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/27_TestLevel.unity
+    guid: 00249efb81f9f8540b237992f385c259
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/29_TestLevel.unity
     guid: 3e4d6f056eda817499a1261ac8a38a28
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/LoopFixer.unity
