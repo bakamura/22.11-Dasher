@@ -289,6 +289,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4310924506294496973, guid: a25db7cafcbfc5548a485c099d0c7cac, type: 3}
+      propertyPath: _angleAdded
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310924506294496973, guid: a25db7cafcbfc5548a485c099d0c7cac, type: 3}
       propertyPath: _holeConnected
       value: 
       objectReference: {fileID: 1502867688}
@@ -359,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 4310924506294496972, guid: a25db7cafcbfc5548a485c099d0c7cac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310924506294496973, guid: a25db7cafcbfc5548a485c099d0c7cac, type: 3}
+      propertyPath: _angleAdded
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4310924506294496973, guid: a25db7cafcbfc5548a485c099d0c7cac, type: 3}
       propertyPath: _holeConnected
