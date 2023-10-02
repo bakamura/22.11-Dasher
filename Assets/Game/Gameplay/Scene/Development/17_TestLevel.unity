@@ -434,11 +434,11 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1456653085}
     m_ColliderPaths:
-    - - X: -10000100
+    - - X: -20000100
         Y: 30000041
-      - X: -10000100
+      - X: -20000100
         Y: 29062459
-      - X: -10000041
+      - X: -20000041
         Y: 29062400
       - X: -100
         Y: 29062400
@@ -454,14 +454,14 @@ CompositeCollider2D:
         Y: 30000041
       - X: 10000041
         Y: 30000100
-      - X: -10000041
+      - X: -20000041
         Y: 30000100
   m_CompositePaths:
     m_Paths:
     - - {x: 0.9999807, y: 2.906246}
       - {x: 0.9999748, y: 3.00001}
-      - {x: -1.00001, y: 2.9999747}
-      - {x: -0.9999807, y: 2.906246}
+      - {x: -2.00001, y: 2.9999747}
+      - {x: -1.9999808, y: 2.906246}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!19719996 &1456653085
@@ -558,6 +558,16 @@ Tilemap:
   m_GameObject: {fileID: 1456653081}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -2, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -1, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -590,7 +600,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 1c7482898525c80499e167c71f8f1007, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -605,12 +615,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 2362129449756843987, guid: 9776e0e977e51dd4fb0df8ec512f912b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data:
       e00: 1
       e01: 0
@@ -629,7 +639,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
