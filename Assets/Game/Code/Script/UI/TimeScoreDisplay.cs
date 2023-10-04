@@ -25,8 +25,9 @@ public class TimeScoreDisplay : MonoBehaviour {
         for (int i = 0; i < _scoreText.Length; i++) {
             tSpan = SaveSystem.instance.progress.levelClearTime[i] < TimeSpan.FromMinutes(10) ? SaveSystem.instance.progress.levelClearTime[i] : maxTSPan;
 
-            _scoreText[i] = Instantiate(_scoreTextPrefab, _scoreTextParent).GetComponent<TextMeshProUGUI>();
-            _scoreText[i].text = $"{i + 1} || {(SaveSystem.instance.progress.levelClearTime[i] != TimeSpan.Zero ? tSpan.ToString(@"m\:ss\.fff") : "UNCLEAR")}";
+            _scoreText[i] = Instantiate(_scoreTextPrefab, _scoreTextParent).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            _scoreText[i].transform.parent.GetComponent<TextMeshProUGUI>().text = $"{i + 1}.";
+            _scoreText[i].text = $"{(SaveSystem.instance.progress.levelClearTime[i] != TimeSpan.Zero ? tSpan.ToString(@"m\:ss\.fff") : "UNCLEAR")}";
 
             sizeParent[1] += gridLayout.cellSize.y + gridLayout.spacing.y;
         }

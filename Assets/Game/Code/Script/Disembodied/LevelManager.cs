@@ -52,7 +52,7 @@ public class LevelManager : Singleton<LevelManager> {
 
         yield return loadOperation;
 
-        loadOperation = SceneManager.LoadSceneAsync(sceneId == 0 ? SaveSystem.instance.progress.levelCurrent : sceneId, LoadSceneMode.Additive);
+        loadOperation = SceneManager.LoadSceneAsync(sceneId == 0 ? SaveSystem.instance.progress.levelCurrent + 1 : sceneId, LoadSceneMode.Additive);
         SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
 
         yield return loadOperation;
