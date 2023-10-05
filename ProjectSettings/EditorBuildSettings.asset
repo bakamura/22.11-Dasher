@@ -93,6 +93,12 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Development/28_TLevel.unity
     guid: 00249efb81f9f8540b237992f385c259
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/30X_TLevel.unity
+    path: Assets/Game/Gameplay/Scene/Development/29_TLevel.unity
+    guid: 0a60bd1966262a04f8311811e0bd42e1
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/31_TLevel.unity
+    guid: 796e52ae91cf05c41aa6e3c94980aa89
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/33_TLevel.unity
     guid: 3e4d6f056eda817499a1261ac8a38a28
   m_configObjects: {}
