@@ -44,6 +44,9 @@ TextureImporter:
   - first:
       213: -8253063760258662791
     second: UiSheet_13
+  - first:
+      213: -5866961230996996269
+    second: UiSheet_15
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -413,8 +416,8 @@ TextureImporter:
       name: UiSheet_12
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
+        x: 112
+        y: 16
         width: 64
         height: 64
       alignment: 0
@@ -434,7 +437,7 @@ TextureImporter:
       name: UiSheet_13
       rect:
         serializedVersion: 2
-        x: 240
+        x: 192
         y: 48
         width: 48
         height: 48
@@ -447,6 +450,27 @@ TextureImporter:
       bones: []
       spriteID: 97ef1259c3a377d80800000000000000
       internalID: -8253063760258662791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiSheet_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f7f6b48dd549ea0800000000000000
+      internalID: -5866961230996996269
       vertices: []
       indices: 
       edges: []

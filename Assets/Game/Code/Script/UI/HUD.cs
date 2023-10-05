@@ -15,7 +15,7 @@ public class HUD : Menu {
 
     [Header("Level Selector")]
 
-    [HideInInspector] public Button[] _levelSelectBtn;
+    [HideInInspector] public Button[] levelSelectBtn;
 
     private void Start() {
         Goal.onGoal.AddListener(HidePauseBtn);

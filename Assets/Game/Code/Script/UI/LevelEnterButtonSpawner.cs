@@ -12,7 +12,7 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
     [SerializeField] private float[] _textSizePerDigit = new float[3];
 
     private void Start() {
-        FindObjectOfType<HUD>()._levelSelectBtn = InstantiateButtons();
+        FindObjectOfType<HUD>().levelSelectBtn = InstantiateButtons();
         Destroy(this);
     }
 
@@ -21,6 +21,7 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
         GridLayoutGroup gridLayout = _btnParent.GetComponent<GridLayoutGroup>();
         Vector2 sizeParent = _btnParent.sizeDelta;
         TextMeshProUGUI tmpUgui;
+        int btnPerRow = Mathf.FloorToInt(GetComponent<CanvasScaler>().referenceResolution.x / gridLayout.cellSize.x); // Needs to take in spacing from gridLayout
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings - 1; i++) {
             int sceneId = i + 1;
             btn[i] = Instantiate(_levelEnterBtnPrefab, _btnParent).GetComponent<Button>();
@@ -32,7 +33,7 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
             if (i > 0) btn[i].interactable = SaveSystem.instance.progress.levelCleared[i - 1]; // 
 
             else sizeParent[1] = 0;
-            if (i % 3 == 0) sizeParent[1] += gridLayout.cellSize.y + gridLayout.spacing.y;
+            if (i % btnPerRow == 0) sizeParent[1] += gridLayout.cellSize.y + gridLayout.spacing.y;
         }
 
         _btnParent.sizeDelta = sizeParent;

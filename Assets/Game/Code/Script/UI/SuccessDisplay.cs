@@ -45,7 +45,7 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
 
         _shouldPause = true;
 
-        if (SaveSystem.instance.progress.levelCurrent < SceneManager.sceneCountInBuildSettings - 1) _hud._levelSelectBtn[SaveSystem.instance.progress.levelCurrent].interactable = true; // Update buttons, has to happen BEFORE SaveSystem.ComleteLevel
+        if (SaveSystem.instance.progress.levelCurrent < SceneManager.sceneCountInBuildSettings - 1) _hud.levelSelectBtn[SaveSystem.instance.progress.levelCurrent].interactable = true; // Update buttons, has to happen BEFORE SaveSystem.ComleteLevel
         if (SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1] == TimeSpan.Zero || span < SaveSystem.instance.progress.levelClearTime[SaveSystem.instance.progress.levelCurrent - 1])
             _timeScoreDisplay.ScoreTextUpdate(SaveSystem.instance.progress.levelCurrent - 1, span);
         SaveSystem.instance.CompleteLevel(span);
