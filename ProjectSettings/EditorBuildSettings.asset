@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Build/9_Level.unity
     guid: 5bd24f642e3bc1d43bc43377aadeb653
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/10_TLevel.unity
+    path: Assets/Game/Gameplay/Scene/Build/10_Level.unity
     guid: 1344e0f494929b64daffb6afa26ed074
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Build/11_Level.unity
@@ -54,16 +54,16 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Build/15_Level.unity
     guid: 9fea8e16f7762fb479f040608b5d7023
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/16_TLevel.unity
+    path: Assets/Game/Gameplay/Scene/Build/16_Level.unity
     guid: 441ea0769fae3eb4aa74020ea64e4cdb
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/17_TLevel.unity
+    path: Assets/Game/Gameplay/Scene/Build/17_Level.unity
     guid: e9b934b6a50a54448a03a5aca413e8b8
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Build/18_Level.unity
     guid: e808c44b9c6eb804dbfd169d3efd6d3a
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/19_TLevel.unity
+    path: Assets/Game/Gameplay/Scene/Build/19_Level.unity
     guid: 1602bbe27eca1f24f8b5f0471dc72ab2
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/20_TLevel.unity
