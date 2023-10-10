@@ -14,7 +14,7 @@ public class ImpulseArea : MonoBehaviour {
         _gravityScaleFull = _playerRb.gravityScale;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnTriggerStay2D(Collider2D collision) {
         if (collision == _playerCol) {
             _playerRb.gravityScale = 0f;
         }

@@ -27,7 +27,7 @@ public class TimeScoreDisplay : MonoBehaviour {
 
             _scoreText[i] = Instantiate(_scoreTextPrefab, _scoreTextParent).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             _scoreText[i].transform.parent.GetComponent<TextMeshProUGUI>().text = $"{i + 1}.";
-            _scoreText[i].text = $"{(SaveSystem.instance.progress.levelClearTime[i] != TimeSpan.Zero ? tSpan.ToString(@"m\:ss\.fff") : "UNCLEAR")}";
+            _scoreText[i].text = SaveSystem.instance.progress.levelClearTime[i] != TimeSpan.Zero ? tSpan.ToString(@"m\:ss\.fff") : "UNCLEAR";
 
             sizeParent[1] += gridLayout.cellSize.y + gridLayout.spacing.y;
         }
@@ -37,7 +37,7 @@ public class TimeScoreDisplay : MonoBehaviour {
 
     public void ScoreTextUpdate(int level, TimeSpan newTime) {
         newTime = newTime < TimeSpan.FromMinutes(10) ? newTime : maxTSPan;
-        _scoreText[level].text = $"{level + 1} || {newTime.ToString(@"m\:ss\.fff")}";
+        _scoreText[level].text = newTime.ToString(@"m\:ss\.fff");
     }
 
 }

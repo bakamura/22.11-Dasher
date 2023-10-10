@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Build/11_Level.unity
     guid: e891ee68ca0edd149810cb4ba33d9a70
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Build/12_Level.unity
+    path: Assets/Game/Gameplay/Scene/Development/12_TLevel.unity
     guid: 4a9c79e80edc64b45b2743f4959b83be
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Build/13_Level.unity
@@ -75,7 +75,7 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Build/22_Level.unity
     guid: 5e9eb2f9ae725a545915e96c22c51c40
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/23_NLevel.unity
+    path: Assets/Game/Gameplay/Scene/Development/23_TLevel.unity
     guid: d5c611c08bc5dff4eaf3c77144d3897f
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/24_TLevel.unity
@@ -101,4 +101,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/33_TLevel.unity
     guid: 3e4d6f056eda817499a1261ac8a38a28
+  - enabled: 1
+    path: Assets/Game/Gameplay/Scene/Development/34_Level.unity
+    guid: ed9bd1eeb76cca74ca12983931dec82d
   m_configObjects: {}
