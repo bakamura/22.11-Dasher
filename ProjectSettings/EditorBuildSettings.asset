@@ -81,7 +81,7 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Development/24_TLevel.unity
     guid: 0e44f1b11bbc7ec4a8835073a39eb0bd
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/25_NLevel.unity
+    path: Assets/Game/Gameplay/Scene/Development/25_TLevel.unity
     guid: 8baec99f355c8f947bc6592c6578b94d
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Build/26_Level.unity

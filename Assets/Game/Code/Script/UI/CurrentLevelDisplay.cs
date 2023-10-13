@@ -21,7 +21,7 @@ public class CurrentLevelDisplay : MonoBehaviour {
     }
 
     private void Start() {
-        LevelManager.instance.onLevelEnter.AddListener(ShowLevelDisplay);
+        LevelManager.instance.onLevelStart.AddListener(ShowLevelDisplay);
         ShowLevelDisplay();
     }
 

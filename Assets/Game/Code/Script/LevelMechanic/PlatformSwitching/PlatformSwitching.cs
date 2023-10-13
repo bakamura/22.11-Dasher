@@ -14,7 +14,7 @@ public class PlatformSwitching : MonoBehaviour {
 
     private PlatformSwitchingAnimation _animationHandler;
     private Collider2D _col;
-    private bool _switchThisFrame = false;
+    private static bool _switchThisFrame = false;
 
     private void Awake() {
         _animationHandler = GetComponent<PlatformSwitchingAnimation>();

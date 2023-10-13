@@ -40,7 +40,7 @@ public class PlatformBreaking : MonoBehaviour {
     }
 
     private bool PlayerAbove() {
-        return _playerRb.velocity.y < 0.05f && transform.position.y < _playerRb.transform.position.y - _playerRb.transform.lossyScale.y / 2;
+        return _playerRb.transform.position.y >= transform.position.y + 0.95f && _playerRb.velocity.y < 0.05f && transform.position.y < _playerRb.transform.position.y - _playerRb.transform.lossyScale.y / 2;
     }
 
     private IEnumerator BreakRespawn() {
