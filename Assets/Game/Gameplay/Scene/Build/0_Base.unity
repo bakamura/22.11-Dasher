@@ -2642,6 +2642,7 @@ GameObject:
   - component: {fileID: 1167852664}
   - component: {fileID: 1167852663}
   - component: {fileID: 1167852668}
+  - component: {fileID: 1167852669}
   - component: {fileID: 1167852666}
   - component: {fileID: 1167852667}
   m_Layer: 0
@@ -2752,6 +2753,18 @@ MonoBehaviour:
   settings:
     musicOn: 1
     sfxOn: 1
+--- !u!114 &1167852669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167852662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcefe0bd12c9f54094778c6dd33b83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1378786973
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ public class HapticHandler : Singleton<HapticHandler> {
     }
 
     private void HapticFeedback(Vector2 v2) {
-        Debug.Log("Vibrated");
         Handheld.Vibrate();
 //#if UNITY_ANDROID && !UNITY_EDITOR
 //        _vibrator.Call("vibrate", _vibrationTime);
