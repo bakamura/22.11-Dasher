@@ -2765,6 +2765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcefe0bd12c9f54094778c6dd33b83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hapticDurationMilsec: 250
+  _hapticAmplitude: 255
 --- !u!1 &1378786973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,7 +3178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcd3180c3f92804b8fddeb749aaed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shakeAmount: 0.1
+  _shakeAmount: 0.125
   _shakeDuration: 0.1
 --- !u!1 &1592098023
 GameObject:
