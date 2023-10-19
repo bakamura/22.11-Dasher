@@ -2602,7 +2602,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _groundCheckPos: {x: 0, y: -0.4975}
-  _groundCheckBox: {x: 0.775, y: 0.075}
+  _groundCheckBox: {x: 0.75, y: 0.075}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
