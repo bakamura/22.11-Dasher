@@ -102,7 +102,7 @@ EditorBuildSettings:
     path: Assets/Game/Gameplay/Scene/Build/31_Level.unity
     guid: 796e52ae91cf05c41aa6e3c94980aa89
   - enabled: 1
-    path: Assets/Game/Gameplay/Scene/Development/32_NLevel.unity
+    path: Assets/Game/Gameplay/Scene/Development/32_TLevel.unity
     guid: cff9b7971f58d80418f470d7a4d0a727
   - enabled: 1
     path: Assets/Game/Gameplay/Scene/Development/33_TLevel.unity
