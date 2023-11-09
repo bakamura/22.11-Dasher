@@ -5,5 +5,6 @@ public class SaveSettings {
 
     public bool musicOn = true;
     public bool sfxOn = true;
+    public bool hapticOn = true;
 
 }

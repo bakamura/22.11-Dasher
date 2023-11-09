@@ -108,4 +108,10 @@ public class SaveSystem : Singleton<SaveSystem> {
         SaveUpdate(SaveType.Settings);
     }
 
+    public void ToggleHaptic(bool isActive) {
+        settings.hapticOn = isActive;
+
+        SaveUpdate(SaveType.Settings);
+    }
+
 }
