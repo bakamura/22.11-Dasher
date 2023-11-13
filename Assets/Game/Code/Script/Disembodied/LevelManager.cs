@@ -53,11 +53,11 @@ public class LevelManager : Singleton<LevelManager> {
         yield return loadOperation;
 
         loadOperation = SceneManager.LoadSceneAsync(sceneId == 0 ? SaveSystem.instance.progress.levelCurrent + 1 : sceneId, LoadSceneMode.Additive);
-        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
 
         yield return loadOperation;
 
         SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
+        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
         while (_waitForAd) { yield return null; }
 
         onLevelEnter?.Invoke();
@@ -96,6 +96,37 @@ public class LevelManager : Singleton<LevelManager> {
         yield return _transitionEndWait;
 
         _hud.PauseBtn(true);
+    }
+
+    public void SkipToNextLevel() {
+        StartCoroutine(SkipToNextLevelRoutine());
+    }
+
+    private IEnumerator SkipToNextLevelRoutine() {
+        Time.timeScale = 1;
+        onLevelLoading?.Invoke();
+        _hud.ShowPauseBtn();
+
+        _transitionAnimationHandler.TransitionStartAnimation();
+
+        yield return _transitionStartWait;
+
+        AsyncOperation loadOperation = SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
+        yield return loadOperation;
+        loadOperation = SceneManager.LoadSceneAsync(SaveSystem.instance.progress.levelCurrent + 1);
+        yield return loadOperation;
+
+        SaveSystem.instance.progress.levelCurrent = SceneManager.GetSceneAt(1).buildIndex;
+        SaveSystem.instance.SaveUpdate(SaveSystem.SaveType.Progress);
+
+        onLevelEnter?.Invoke();
+        _hud.PauseBtn(true);
+        onLevelStart.Invoke();
+
+        _transitionAnimationHandler.TransitionEndAnimation();
+
+        yield return _transitionEndWait;
+
     }
 
     private void AdOpened(IronSourceAdInfo adInfo) {

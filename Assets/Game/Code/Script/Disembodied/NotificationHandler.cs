@@ -1,12 +1,17 @@
 using System;
 using Unity.Notifications.Android;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class NotificationHandler : MonoBehaviour {
 
     [SerializeField] private NotificationInfo[] _notifications;
 
     private void Start() {
+        if (!Permission.HasUserAuthorizedPermission("android.permission.POST_NOTIFICATIONS")) {
+            Permission.RequestUserPermission("android.permission.POST_NOTIFICATIONS");
+        }
+
         AndroidNotificationCenter.CancelAllNotifications(); // Clean Schedule + Already shown
 
         // Safe to instance AndroidNotificationChannel, as it's ignored when "id" already exists

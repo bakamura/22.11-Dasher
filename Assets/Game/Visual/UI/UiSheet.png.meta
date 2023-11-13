@@ -47,6 +47,15 @@ TextureImporter:
   - first:
       213: -5866961230996996269
     second: UiSheet_15
+  - first:
+      213: 6089664075976592269
+    second: UiSheet_17
+  - first:
+      213: 4410236853751022174
+    second: UiSheet_18
+  - first:
+      213: 2274390217967842910
+    second: UiSheet_19
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -416,8 +425,8 @@ TextureImporter:
       name: UiSheet_12
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
+        x: 96
+        y: 32
         width: 64
         height: 64
       alignment: 0
@@ -437,7 +446,7 @@ TextureImporter:
       name: UiSheet_13
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 48
         width: 48
         height: 48
@@ -458,8 +467,29 @@ TextureImporter:
       name: UiSheet_15
       rect:
         serializedVersion: 2
-        x: 240
+        x: 208
         y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f7f6b48dd549ea0800000000000000
+      internalID: -5866961230996996269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiSheet_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
         width: 48
         height: 48
       alignment: 0
@@ -469,8 +499,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35f7f6b48dd549ea0800000000000000
-      internalID: -5866961230996996269
+      spriteID: d8bca027635d28450800000000000000
+      internalID: 6089664075976592269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiSheet_18
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e528a235d0f443d30800000000000000
+      internalID: 4410236853751022174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiSheet_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56b89e5ad1409f10800000000000000
+      internalID: 2274390217967842910
       vertices: []
       indices: 
       edges: []

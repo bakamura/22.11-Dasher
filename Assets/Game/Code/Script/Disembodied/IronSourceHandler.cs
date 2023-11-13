@@ -237,14 +237,14 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
         }
     }
 
-    // UNUSED
     // Logic should probably use IronSource Events instead of returning bool through method
-    public bool RewardadeShow() {
-        if (IronSource.Agent.isRewardedVideoAvailable()) {
-            IronSource.Agent.showRewardedVideo();
-            return true;
-        }
-        return false;
+    public bool RewardedCheck() {
+        return IronSource.Agent.isRewardedVideoAvailable();
+    }
+
+    public void RewardedShow() {
+        if (IronSource.Agent.isRewardedVideoAvailable()) IronSource.Agent.showRewardedVideo();
+        else Debug.LogError("No Rewarded Video Available. Maybe the offer expired?"); //
     }
 
 }
