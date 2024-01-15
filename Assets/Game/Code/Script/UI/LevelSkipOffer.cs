@@ -26,13 +26,14 @@ public class LevelSkipOffer : MonoBehaviour {
     private void Start() {
         LevelManager.instance.onLevelEnter.AddListener(ResetSkipBtn);
         StartCoroutine(DelayFirstSkipShow());
-    }
-
-    public void SkipBtn() {
         IronSourceHandler.instance.SubscribeToIronSourceEvent(IronSourceHandler.IronSourceEvent.RewardedAdRewardedEvent, LevelSkiped);
     }
 
-    private void LevelSkiped() {
+    public void SkipBtn() {
+        IronSourceHandler.instance.RewardedShow();
+    }
+
+    private void LevelSkiped(IronSourcePlacement placement, IronSourceAdInfo adInfo) {
         SaveSystem.instance.CompleteLevel(TimeSpan.Zero); //
         LevelManager.instance.SkipToNextLevel();
     }
