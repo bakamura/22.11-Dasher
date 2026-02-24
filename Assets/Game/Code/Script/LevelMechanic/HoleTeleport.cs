@@ -29,7 +29,7 @@ public class HoleTeleport : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (canTeleport && collision == PlayerDash.instance.col && Vector2.Angle(PlayerDash.instance.rb.velocity.normalized, (Vector2) transform.up) > _acceptedAngle) Teleport();
+        if (canTeleport && collision == PlayerDash.instance.col && Vector2.Angle(PlayerDash.instance.rb.linearVelocity.normalized, (Vector2) transform.up) > _acceptedAngle) Teleport();
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
@@ -44,7 +44,7 @@ public class HoleTeleport : MonoBehaviour {
         PlayerDash.instance.transform.position = _holeConnected.transform.position;
 
         // Angle
-        PlayerDash.instance.rb.velocity = _holeConnected.transform.up * PlayerDash.instance.rb.velocity.magnitude;
+        PlayerDash.instance.rb.linearVelocity = _holeConnected.transform.up * PlayerDash.instance.rb.linearVelocity.magnitude;
     }
 
     //private void Teleport() {

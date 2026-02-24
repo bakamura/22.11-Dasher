@@ -46,7 +46,7 @@ public class PlayerDash : Singleton<PlayerDash> {
         bool grounded = CheckGround();
         if (grounded && !_groundedWas) {
             ResetDash();
-            if(rb.velocity.y < 0.05f) onLand.Invoke();
+            if(rb.linearVelocity.y < 0.05f) onLand.Invoke();
         }
         _groundedWas = grounded;
     }
@@ -57,7 +57,7 @@ public class PlayerDash : Singleton<PlayerDash> {
             StartCoroutine(GroundCheckDelay());
 
             direction = direction.normalized;
-            rb.velocity = direction * _dashVelocity;
+            rb.linearVelocity = direction * _dashVelocity;
             onDash.Invoke(direction);
         }
     }
@@ -90,7 +90,7 @@ public class PlayerDash : Singleton<PlayerDash> {
 
     private void GoToInitialPos() {
         transform.position = initialPos;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
     }
 
 #if UNITY_EDITOR

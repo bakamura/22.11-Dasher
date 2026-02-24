@@ -43,9 +43,9 @@ public class PlayerAnimation : AnimationHandler {
     }
 
     private void Update() {
-        if(Mathf.Abs(_rb.velocity.x) > _flipVelocityTreshould) _sr.flipX = _rb.velocity.x < 0;
+        if(Mathf.Abs(_rb.linearVelocity.x) > _flipVelocityTreshould) _sr.flipX = _rb.linearVelocity.x < 0;
         if (_animation[_currentAnimation].name != PLAYER_IDLE) {
-            if (_rb.velocity.y > 0) ChangeAnimation(PLAYER_DASH);
+            if (_rb.linearVelocity.y > 0) ChangeAnimation(PLAYER_DASH);
             else ChangeAnimation(PLAYER_FALL);
         }
     }

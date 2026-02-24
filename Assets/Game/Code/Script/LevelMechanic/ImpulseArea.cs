@@ -21,8 +21,8 @@ public class ImpulseArea : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision == _playerCol) {
             _playerRb.gravityScale = 0f;
-            if(_playerRb.velocity.magnitude <= 0) _playerRb.velocity = Vector3.up; // Doesn't consider possibility of bein vertically stuck, should read each collision direction maybe
-            else if (_playerRb.velocity.magnitude < _velocityMin) _playerRb.velocity = _playerRb.velocity.normalized * _velocityMin;
+            if(_playerRb.linearVelocity.magnitude <= 0) _playerRb.linearVelocity = Vector3.up; // Doesn't consider possibility of bein vertically stuck, should read each collision direction maybe
+            else if (_playerRb.linearVelocity.magnitude < _velocityMin) _playerRb.linearVelocity = _playerRb.linearVelocity.normalized * _velocityMin;
         }
     }
 
