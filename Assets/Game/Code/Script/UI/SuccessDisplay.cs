@@ -31,8 +31,8 @@ public class SuccessDisplay : Singleton<SuccessDisplay> {
         LevelManager.instance.onLevelLoading.AddListener(OtherSceneLoaded);
         LevelManager.instance.onLevelStart.AddListener(Restart);
 
-        _hud = FindObjectOfType<HUD>();
-        _timeScoreDisplay = FindObjectOfType<TimeScoreDisplay>();
+        _hud = FindAnyObjectByType<HUD>();
+        _timeScoreDisplay = FindAnyObjectByType<TimeScoreDisplay>();
     }
 
     private void ShowDisplay() {

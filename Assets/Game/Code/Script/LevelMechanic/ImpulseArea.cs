@@ -13,7 +13,7 @@ public class ImpulseArea : MonoBehaviour {
     private float _gravityScaleFull;
 
     private void Start() {
-        _playerRb = FindObjectOfType<PlayerDash>().GetComponent<Rigidbody2D>();
+        _playerRb = FindAnyObjectByType<PlayerDash>().GetComponent<Rigidbody2D>();
         _playerCol = _playerRb.GetComponent<Collider2D>();
         _gravityScaleFull = _playerRb.gravityScale;
     }

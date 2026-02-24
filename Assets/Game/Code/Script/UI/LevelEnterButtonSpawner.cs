@@ -12,7 +12,7 @@ public class LevelEnterButtonSpawner : MonoBehaviour {
     [SerializeField] private float[] _textSizePerDigit = new float[3];
 
     private void Start() {
-        FindObjectOfType<HUD>().levelSelectBtn = InstantiateButtons();
+        FindAnyObjectByType<HUD>().levelSelectBtn = InstantiateButtons();
         Destroy(this);
     }
 

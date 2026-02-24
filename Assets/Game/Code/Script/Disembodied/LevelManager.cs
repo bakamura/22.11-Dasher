@@ -22,8 +22,8 @@ public class LevelManager : Singleton<LevelManager> {
     private WaitForSecondsRealtime _transitionEndWait;
 
     private void Start() {
-        _hud = FindObjectOfType<HUD>();
-        _transitionAnimationHandler = FindObjectOfType<LevelTransitionAnimation>();
+        _hud = FindAnyObjectByType<HUD>();
+        _transitionAnimationHandler = FindAnyObjectByType<LevelTransitionAnimation>();
         _transitionStartWait = new WaitForSecondsRealtime(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_START));
         _transitionEndWait = new WaitForSecondsRealtime(_transitionAnimationHandler.GetAnimationDuration(LevelTransitionAnimation.TRANSITION_END));
 

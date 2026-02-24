@@ -34,7 +34,7 @@ public class SimulatedThumbStick : Singleton<SimulatedThumbStick> {
     }
 
     private void Start() {
-        FindObjectOfType<HUD>().onPause.AddListener(ToggleInput);
+        FindAnyObjectByType<HUD>().onPause.AddListener(ToggleInput);
         Goal.onGoal.AddListener(HideInput);
         LevelManager.instance.onLevelStart.AddListener(ShowInput);
         _screenY = Screen.height;
