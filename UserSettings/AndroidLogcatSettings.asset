@@ -1,50 +1,13 @@
 {
     "m_SelectedDeviceId": "FAGATGNJYXLVQC79",
-    "m_SelectedPackage": {
+    "m_SelectedProcess": {
         "deviceId": "",
         "name": "",
         "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "FAGATGNJYXLVQC79",
-            "name": "com.miui.home",
-            "processId": 23373,
-            "exited": false
-        },
-        {
-            "deviceId": "FAGATGNJYXLVQC79",
-            "name": "com.android.settings",
-            "processId": 19792,
-            "exited": true
-        },
-        {
-            "deviceId": "FAGATGNJYXLVQC79",
-            "name": "com.ZetaZash.com.unity.Dasher",
-            "processId": 17620,
-            "exited": true
-        },
-        {
-            "deviceId": "FAGATGNJYXLVQC79",
-            "name": "com.ZetaZash.com.unity.Dasher",
-            "processId": 21304,
-            "exited": true
-        },
-        {
-            "deviceId": "FAGATGNJYXLVQC79",
-            "name": "com.ZetaZash.com.unity.Dasher",
-            "processId": 23187,
-            "exited": true
-        },
-        {
-            "deviceId": "FAGATGNJYXLVQC79",
-            "name": "com.ZetaZash.com.unity.Dasher",
-            "processId": 3182,
-            "exited": false
-        }
-    ],
+    "m_KnownProcessesForSerialization": [],
     "m_Tags": {
         "m_Entries": [
             {
@@ -77,8 +40,11 @@
             }
         ]
     },
+    "m_ExtraWindowState": {
+        "Type": 0,
+        "Height": 0.0
+    },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 300.0,
         "MemoryWindowWidth": 170.0,
         "MemoryTypeEnabled": [
             true,
@@ -93,7 +59,7 @@
             true
         ],
         "MemoryGroup": 2,
-        "Behavior": 0
+        "AutoCapture": true
     },
     "m_FilterOptions": {
         "m_Filter": "",
@@ -111,5 +77,28 @@
         "BitRateK": 20000,
         "DisplayIdEnabled": false,
         "DisplayId": ""
-    }
+    },
+    "m_ScreenCaptureSettings": {
+        "Mode": 0,
+        "m_LastSaveLocation": [
+            "D:\\Projects\\Unity\\Dasher",
+            "D:\\Projects\\Unity\\Dasher"
+        ]
+    },
+    "m_QueryLayoutSettings": {
+        "LastLayoutSaveLocation": "",
+        "LastScreenshotSaveLocation": ""
+    },
+    "m_InputSettings": {
+        "ShiftModifier": false,
+        "SendText": "",
+        "PosixKillSignal": 0,
+        "TargetProcess": {
+            "deviceId": "",
+            "name": "",
+            "processId": 0,
+            "exited": false
+        }
+    },
+    "m_AutoScroll": 2
 }
