@@ -30,9 +30,9 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
     }
 
     private void Start() {
-        IronSource.Agent.init(APP_KEY);
-        IronSource.Agent.shouldTrackNetworkState(true);
-        StartCoroutine(InterstitialLoad());
+        //IronSource.Agent.init(APP_KEY);
+        //IronSource.Agent.shouldTrackNetworkState(true);
+        //StartCoroutine(InterstitialLoad());
     }
 
     private void OnApplicationPause(bool isPaused) {
@@ -227,24 +227,24 @@ public class IronSourceHandler : Singleton<IronSourceHandler> {
     }
 
     public void InterstitialShow() {
-        if (IronSource.Agent.isInterstitialReady() && !IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT)) {
-            IronSource.Agent.showInterstitial(INTERSTITIAL_PLACEMENT);
-            StartCoroutine(InterstitialLoad());
-        }
-        else {
-            //Debug.Log("Interstitial Ready: " + IronSource.Agent.isInterstitialReady() +
-            //          "\n Interstitial Placement Capped:" + IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT));
-        }
+        //if (IronSource.Agent.isInterstitialReady() && !IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT)) {
+        //    IronSource.Agent.showInterstitial(INTERSTITIAL_PLACEMENT);
+        //    StartCoroutine(InterstitialLoad());
+        //}
+        //else {
+        //    //Debug.Log("Interstitial Ready: " + IronSource.Agent.isInterstitialReady() +
+        //    //          "\n Interstitial Placement Capped:" + IronSource.Agent.isInterstitialPlacementCapped(INTERSTITIAL_PLACEMENT));
+        //}
     }
 
     // Logic should probably use IronSource Events instead of returning bool through method
     public bool RewardedCheck() {
-        return IronSource.Agent.isRewardedVideoAvailable();
+        return /*IronSource.Agent.isRewardedVideoAvailable()*/true;
     }
 
     public void RewardedShow() {
-        if (IronSource.Agent.isRewardedVideoAvailable()) IronSource.Agent.showRewardedVideo();
-        else Debug.LogError("No Rewarded Video Available. Maybe the offer expired?"); //
+        //if (IronSource.Agent.isRewardedVideoAvailable()) IronSource.Agent.showRewardedVideo();
+        //else Debug.LogError("No Rewarded Video Available. Maybe the offer expired?"); //
     }
 
 }
